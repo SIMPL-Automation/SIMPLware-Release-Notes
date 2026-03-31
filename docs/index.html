@@ -93,7 +93,67 @@
             name: 'SIMPLware Release Notes',
             repo: '',
             coverpage: true,
-            onlyCover: true
+            onlyCover: true,
+            plugins: [
+                function (hook, vm) {
+                    hook.doneEach(function () {
+                        var root = document.querySelector('.markdown-section');
+                        if (!root) {
+                            return;
+                        }
+
+                        var walker = document.createTreeWalker(
+                            root,
+                            NodeFilter.SHOW_TEXT,
+                            null
+                        );
+
+                        var re = /\[#\d+\]/g;
+                        var nodesToProcess = [];
+
+                        while (walker.nextNode()) {
+                            nodesToProcess.push(walker.currentNode);
+                        }
+
+                        nodesToProcess.forEach(function (textNode) {
+                            var text = textNode.nodeValue;
+                            if (!re.test(text)) {
+                                return;
+                            }
+
+                            var frag = document.createDocumentFragment();
+                            var lastIndex = 0;
+                            re.lastIndex = 0;
+
+                            var match;
+                            while ((match = re.exec(text)) !== null) {
+                                if (match.index > lastIndex) {
+                                    frag.appendChild(
+                                        document.createTextNode(
+                                            text.slice(lastIndex, match.index)
+                                        )
+                                    );
+                                }
+
+                                var span = document.createElement('span');
+                                span.className = 'ticket-tag';
+                                span.textContent = match[0];
+                                frag.appendChild(span);
+
+                                lastIndex = match.index + match[0].length;
+                            }
+
+                            if (lastIndex < text.length) {
+                                frag.appendChild(
+                                    document.createTextNode(text.slice(lastIndex))
+                                );
+                            }
+
+                            textNode.parentNode.replaceChild(frag, textNode);
+                        });
+                    });
+                }
+            ]
         };
 
         window.handleSimplGate = function (event) {

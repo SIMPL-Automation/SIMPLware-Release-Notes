@@ -11,7 +11,7 @@
 - Robot mechanics
 - Layout and physical infrastructure
 
-> **NOTE**: SIMPL ticket numbers are denoted like this: **[#<\<ticket-number>\>]**
+> **NOTE**: SIMPL ticket numbers look like this: [#1234]
 
 # v2.1.0 - Revenge of the backend
 <div class=h1Subtitle>

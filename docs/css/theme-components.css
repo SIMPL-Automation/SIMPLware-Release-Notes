@@ -9,41 +9,60 @@
     font-size: var(--font-size-xxl);
     font-weight: 400;
     text-align: start;
+    margin-bottom: -0.3em;
 }
 
 .markdown-section h1 {
     background-image: var(--darkGradient);
     color: var(--color-simpl-night);
-    border-radius: 28px;
-    font-size: var(--font-size-xl);
+    border-radius: 999px;
+    font-size: 1.8em;
     font-weight: 600;
     text-align: center;
+    margin-top: 4em;
 }
 
 .h1Subtitle {
     text-align: center;
     color: var(--color-simpl-rain);
-    font-size: 24px;
+    font-size: var(--font-size-xl);
     font-style: italic;
+    margin-bottom: -1em;
 }
 
 .markdown-section h2 {
     border-color: var(--color-simpl-rain);
-    margin-top: 24px;
+    margin-top: 1em;
     margin-bottom: 0;
 }
 
 .markdown-section h3 {
     color: var(--color-simpl-rain);
-    margin-top: 24px;
-    margin-bottom: -12px;
+    margin-top: 1em;
+    margin-bottom: -0.65em;
+}
+
+.markdown-section code {
+    font-size: 0.9em;
+}
+
+.markdown-section .ticket-tag {
+    display: inline-block;
+    padding: 0 0.5em;
+    margin-left: 0.2em;
+    border-radius: 999px;
+    background-color: var(--color-simpl-rain);
+    color: var(--color-simpl-night);
+    font-size: 14px;
+    font-weight: 600;
+    vertical-align: middle;
 }
 
 img {
     text-align: center;
-    border: 4px; 
+    border: 0.25em; 
     border-style: solid;
-    border-radius: 12px;
+    border-radius: 0.75em;
 }
 
 img[src*="simpl_automation_logo_inverse.png"] {
@@ -72,9 +91,9 @@ img[src*="simpl_automation_logo_inverse.png"] {
     flex: 1 1 auto;
     padding: 0.4rem 0.75rem;
     border-radius: var(--cover-button-border-radius);
-    border: 1px solid var(--color-simpl-gray);
-    background-color: var(--color-simpl-night);
-    color: var(--color-simpl-sky);
+    border: 0.2em solid var(--color-simpl-night);
+    background-color: var(--color-simpl-sky);
+    color: var(--color-simpl-night);
 }
 
 .release-gate-row button {
