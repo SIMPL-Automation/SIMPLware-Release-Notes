@@ -19,6 +19,7 @@
 			"extensions": [
 				"streetsidesoftware.code-spell-checker",
 				"eamodio.gitlens",
+				"mhutchie.git-graph",
 				"ahgood.shift-shift",
 				"yzhang.markdown-all-in-one",
 				"shd101wyy.markdown-preview-enhanced",
