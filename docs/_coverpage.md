@@ -1,4 +1,4 @@
-![logo](_media/simpl_automation_logo_inverse.png)
+![logo](_media/images/simpl_automation_logo_inverse.png)
 
 # SIMPLware Release Notes
 

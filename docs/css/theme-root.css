@@ -1,0 +1,83 @@
+:root {
+    /* Variables */
+    --color-simpl-sky: hsl(223, 78%, 98%);
+    --color-simpl-rain: hsl(209, 45%, 58%);
+    --color-simpl-blue: hsl(209, 45%, 34%);
+    --color-simpl-night: hsl(208, 59%, 11%);
+    --color-simpl-black: hsl(208, 50%, 5%);
+    --color-simpl-gray: hsl(210, 11%, 26%);
+    --lightGradient: linear-gradient(to right, var(--color-simpl-night), var(--color-simpl-blue), var(--color-simpl-blue), var(--color-simpl-blue), var(--color-simpl-night));
+    --darkGradient: linear-gradient(to right, var(--color-simpl-sky), var(--color-simpl-rain), var(--color-simpl-rain), var(--color-simpl-rain), var(--color-simpl-sky));
+
+    /* ------------------- CONTENT ------------------- */
+    /* Theme */
+    --theme-hue: 209;
+    --theme-saturation: 45%;
+    --theme-lightness: 58%;
+    --theme-color: var(--color-simpl-rain);
+
+    --base-background-color: var(--color-simpl-black);
+    --base-color: var(--color-simpl-sky);
+    --base-font-family: "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --base-font-size: 16px;
+
+    --content-max-width: 65em;
+
+    /* Horizontal Rule */
+    --hr-border: 1px solid var(--color-simpl-sky);
+
+    /* Mark */
+    --mark-background: var(--color-simpl-rain);
+
+    /* Selection */
+    --selection-color: var(--color-simpl-blue);
+
+    /* Blockquote */
+    --blockquote-background: var(--color-simpl-gray);
+    --blockquote-border-radius: var(--border-radius-l);
+    --blockquote-padding: 1.2em;
+
+    /* Code */
+    --code-font-size: calc(var(--font-size-m) * 0.94);
+    --code-block-border-radius: var(--border-radius-l);
+    --code-theme-background: var(--color-simpl-gray);
+    --code-inline-background: var(--code-theme-background);
+    --code-inline-border-radius: var(--border-radius-s);
+
+    /* Headings */
+    --heading-h1-color: var(--color-simpl-rain);
+    --heading-h2-padding: ;
+
+    /* ------------------- COVER PAGE ------------------- */
+    /* --cover-color: ; */
+    --cover-max-width: 50em;
+
+    /* Background */
+    --cover-background-color: var(--color-simpl-black);
+    --cover-background-image: ;
+
+    /* Blockquote (Subtitle) */
+    --cover-blockquote-color: ;
+
+    /* Buttons */
+    --cover-button-border-radius: var(--border-radius-l);
+    --cover-button-padding: 0.5em 2rem;
+    --cover-button-text-decoration: none;
+
+    /* Buttons - Primary */
+    /* --cover-button-primary-background: var(--theme-color); */
+    --cover-button-primary-background--hover: var(--color-simpl-blue);
+    --cover-button-primary-border: 1px solid var(--theme-color);
+    --cover-button-primary-border--hover: ;
+    --cover-button-primary-box-shadow: ;
+    --cover-button-primary-box-shadow--hover: ;
+    --cover-button-primary-color: var(--color-simpl-night);
+    --cover-button-primary-color--hover: ;
+    --cover-button-primary-text-decoration: ;
+    --cover-button-primary-text-decoration--hover: ;
+    --cover-button-primary-text-decoration-color: ;
+    --cover-button-primary-text-decoration-color--hover: ;
+
+    /* Heading */
+    --cover-heading-font-size: var(--font-size-xxl);
+}

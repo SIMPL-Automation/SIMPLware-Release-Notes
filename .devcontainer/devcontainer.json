@@ -19,6 +19,7 @@
 			"extensions": [
 				"streetsidesoftware.code-spell-checker",
 				"eamodio.gitlens",
+				"ahgood.shift-shift",
 				"yzhang.markdown-all-in-one",
 				"shd101wyy.markdown-preview-enhanced",
 				"RomanPeshkov.vscode-text-tables",

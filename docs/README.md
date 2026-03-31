@@ -1,4 +1,4 @@
-# Scope
+# SIMPLware Release Notes
 
 ## In scope
 - SIMPL UIs: Flo and Puls
@@ -14,7 +14,7 @@
 > **NOTE**: SIMPL ticket numbers are denoted like this: **[#<\<ticket-number>\>]**
 
 # v2.1.0 - Revenge of the backend
-<div class=h2Subtitle>
+<div class=h1Subtitle>
 2026.03.27
 </div>
 
@@ -49,7 +49,7 @@ Manual extract and deposit buttons in Flo only show **when appropriate** based o
 - Typing capital `T` into the Orphanage teleport reason field on Flo Web no longer clears the form [#6361]
 
 ## 🤖 Firmware updates
-✅ No firmware updates required!
+No firmware updates required! ✅
 
 ## 🧪 Development improvements
 - Backend services can now take advantage of the new `inventory.upsert` Kafka API to update inventory in Redis [#6461]
@@ -68,15 +68,15 @@ Manual extract and deposit buttons in Flo only show **when appropriate** based o
 - **Downtime requirements**: 30 minutes of full system downtime
 
 # v2.0.3 - Flo and auto-clear bug fixes
-<div class=h2Subtitle>
+<div class=h1Subtitle>
 2026.03.12
 </div>
 
 ## ✨ Shiny new stuff
-〰️ Sorry, just the shiny old stuff for now.
+Sorry, just the shiny old stuff for now 〰️
 
 ## ⏫ Level-ups
-🚢 Steady as she goes.
+Steady as she goes 🚢
 
 ## 🪲 Bug fixes
 - Flo Web is no longer jittery when it's processing messages like Robot and Container updates [#6254]
@@ -84,20 +84,20 @@ Manual extract and deposit buttons in Flo only show **when appropriate** based o
 - SIMPLware will no longer automatically add any default Auto Clear rules [#6272]
 
 ## 🤖 Firmware updates
-✅ No firmware updates required!
+No firmware updates required! ✅
 
 ## 🧪 Development improvements
-🙈 Nothing to see here.
+Nothing to see here 🙈
 
 ## 🚧 Known issues
-👻 Ghost town.
+Ghost town 👻
 
 ## 🚀 Deployment notes
 - No downtime is required for this release, but Flo Web instances accessed through port-forwarding will disconnect during the deployment.
 - This release includes a new Flo APK
 
 # v2.0.1 - Find Containers; massacre bugs
-<div class=h2Subtitle>
+<div class=h1Subtitle>
 2026.03.06
 </div>
 
@@ -105,7 +105,7 @@ Manual extract and deposit buttons in Flo only show **when appropriate** based o
 ### 📦 New Containers screen in Flo! [#4986]
 Finding and researching Containers just got a lot easier! Tap the **new filter icon** in the app bar on the **Containers screen** to search Containers any way you please!
 
-![Containers screen](/Assets/Images/SIMPLwareReleases/2.0.1/ContainersScreenDesktop.png)
+![Containers screen](_media/screenshots/2.0.1/ContainersScreenDesktop.png)
 
 - After selecting some filters, click the **"Apply filters"** button to see all Containers in the system that **match your criteria**
 - Easily find all **disabled** or **inaccessible** Containers, all Containers of a particular **type**, **tag**, **location**; the possibilities are endless!
@@ -115,7 +115,7 @@ Finding and researching Containers just got a lot easier! Tap the **new filter i
 ### ‼️ Inaccessible Tunnels alert [#6206]
 Flo will now **alert you** (with a new tone) whenever a Robot marks a Tunnel as **inaccessible**.
 
-![Inaccessible alert](/Assets/Images/SIMPLwareReleases/2.0.1/InaccessibleAlert.png)
+![Inaccessible alert](_media/screenshots/2.0.1/InaccessibleAlert.png)
 
 - When **Robots** fail to complete extract or deposit tasks at a Tunnel, they **mark the Tunnel as inaccessible** and move on to other tasks until a **human marks the Tunnel as accessible** again
 - Tap the **red Tunnel alert icon** to jump to the Containers screen, filtered on **inaccessible Tunnels**
@@ -137,7 +137,7 @@ The Area Demand API now accepts "process by time" in many different formats.
 - The Android status bar no longer overlaps icons on the Robot Cards side-sheet in Flo [#6227]
 
 ## 🤖 Firmware updates
-✅ No firmware updates required!
+No firmware updates required! ✅
 
 ## 🧪 Development improvements
 - Improved QA test cases for one of our digital clones [#6220]
@@ -147,7 +147,7 @@ The Area Demand API now accepts "process by time" in many different formats.
 - This release is incompatible with previous releases of Flo due to the change in how we handle Container cache. Please clear your Flo browser site data or Android data before launching the new version of Flo.
 
 # v2.0.0 - New features galore!
-<div class=h2Subtitle>
+<div class=h1Subtitle>
 2026.02.28
 </div>
 
@@ -223,7 +223,7 @@ Flo has some new **keyboard shortcuts** to make desktop mode even faster with mo
 
 
 ## ⏫ Level-ups
-🚢 Steady as she goes.
+Steady as she goes 🚢
 
 ## 🪲 Bug fixes
 - Flo now shows the correct Enabled and Accessible states of Containers in most cases. See [Known issues](#known-issues) below. [#5301]
@@ -235,7 +235,7 @@ Flo has some new **keyboard shortcuts** to make desktop mode even faster with mo
 - Flo no longer has visual and audio alerts for auto-cleared Robot task failures [#5025]
 
 ## 🤖 Firmware updates
-✅ No firmware updates required!
+No firmware updates required! ✅
 
 ## 🧪 Development improvements
 - RMS and LM automatically create Kafka topics they need to listen to at startup if they don't exist in the broker [#5775]

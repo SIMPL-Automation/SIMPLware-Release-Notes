@@ -1,0 +1,97 @@
+.sidebar {
+    background-color: var(--color-simpl-night);
+}
+
+.markdown-section h1#simplware-release-notes {
+    background-image: none;
+    color: var(--color-simpl-rain);
+    border-radius: none;
+    font-size: var(--font-size-xxl);
+    font-weight: 400;
+    text-align: start;
+}
+
+.markdown-section h1 {
+    background-image: var(--darkGradient);
+    color: var(--color-simpl-night);
+    border-radius: 28px;
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    text-align: center;
+}
+
+.h1Subtitle {
+    text-align: center;
+    color: var(--color-simpl-rain);
+    font-size: 24px;
+    font-style: italic;
+}
+
+.markdown-section h2 {
+    border-color: var(--color-simpl-rain);
+    margin-top: 24px;
+    margin-bottom: 0;
+}
+
+.markdown-section h3 {
+    color: var(--color-simpl-rain);
+    margin-top: 24px;
+    margin-bottom: -12px;
+}
+
+img {
+    text-align: center;
+    border: 4px; 
+    border-style: solid;
+    border-radius: 12px;
+}
+
+img[src*="simpl_automation_logo_inverse.png"] {
+    border: none;
+    border-radius: 0;
+}
+
+.release-gate {
+    margin-top: 2rem;
+    max-width: 28rem;
+    place-self: center;
+}
+
+.release-gate label {
+    display: block;
+    margin-bottom: 0.75rem;
+}
+
+.release-gate-row {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+}
+
+.release-gate-row input[type="password"] {
+    flex: 1 1 auto;
+    padding: 0.4rem 0.75rem;
+    border-radius: var(--cover-button-border-radius);
+    border: 1px solid var(--color-simpl-gray);
+    background-color: var(--color-simpl-night);
+    color: var(--color-simpl-sky);
+}
+
+.release-gate-row button {
+    padding: var(--cover-button-padding);
+    border-radius: var(--cover-button-border-radius);
+    border: var(--cover-button-primary-border);
+    background-color: var(--color-simpl-rain);
+    color: var(--color-simpl-night);
+    cursor: pointer;
+}
+
+.release-gate-row button:hover {
+    background-color: var(--cover-button-primary-background--hover);
+    color: var(--color-simpl-sky);
+}
+
+.release-gate-error {
+    margin-top: 0.75rem;
+    color: var(--color-simpl-rain);
+}
