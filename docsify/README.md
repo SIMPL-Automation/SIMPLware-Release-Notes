@@ -140,7 +140,7 @@ The Area Demand API now accepts "process by time" in many different formats.
 ✅ No firmware updates required!
 
 ## 🧪 Development improvements
-- Updated QA test cases for Staples Arden Hills digital clone [#6220]
+- Improved QA test cases for one of our digital clones [#6220]
 - NVS MQTT client ID now uses the Kubernetes pod ID for smoother upgrades [#6192]
 
 ## 🚧 Known issues

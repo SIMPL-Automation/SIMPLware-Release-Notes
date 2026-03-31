@@ -1,0 +1,9 @@
+services:
+  simplware-release-notes:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    hostname: simplware-release-notes
+    container_name: simplware-release-notes
+    volumes:
+      - ..:/home/dev/workspace:cached

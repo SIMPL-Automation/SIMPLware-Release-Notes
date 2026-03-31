@@ -1,0 +1,34 @@
+// For format details, see https://aka.ms/devcontainer.json.
+// Based on iac/Helm/.devcontainer — trimmed for Docsify / GitHub Pages docs only.
+{
+	"name": "SIMPLware Release Notes",
+	"dockerComposeFile": [
+		"docker-compose.devcontainer.yml"
+	],
+	"service": "simplware-release-notes",
+	"overrideCommand": true,
+	"workspaceFolder": "/home/dev/workspace",
+	"shutdownAction": "stopCompose",
+	"mounts": [
+		"source=${localEnv:HOME}/.ssh,target=/home/dev/.ssh,type=bind,consistency=cached",
+        "source=${localEnv:HOME}/.crt,target=/home/dev/.crt,type=bind,consistency=cached"
+	],
+	"postCreateCommand": "git config --global --add safe.directory \"${containerWorkspaceFolder}\" || true",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"streetsidesoftware.code-spell-checker",
+				"eamodio.gitlens",
+				"yzhang.markdown-all-in-one",
+				"shd101wyy.markdown-preview-enhanced",
+				"RomanPeshkov.vscode-text-tables",
+				"bierner.markdown-mermaid"
+			],
+			"settings": {
+				"terminal.integrated.cursorStyle": "line",
+				"terminal.integrated.cursorBlinking": true,
+                "markdown-preview-enhanced.chromePath": "/usr/local/bin/google-chrome"
+			}
+		}
+	}
+}
