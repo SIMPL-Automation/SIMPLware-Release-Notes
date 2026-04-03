@@ -42,6 +42,7 @@ Flo now downloads containers **faster** from the backend when starting Flo with 
 Manual extract and deposit buttons in Flo only show **when appropriate** based on whether the robot has a **tote onboard**.
 
 ## 🪲 Bug fixes
+- Automatic silver code collection works now [#5917]
 - Mantis manual moves to DM codes work now [#6362]
 - Flo now shows full DM code offsets for Mantises in the Scanner section of the Robot Detail screen [#6363]
 - Homing code collect now starts properly [#5917]
