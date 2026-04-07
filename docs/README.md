@@ -64,7 +64,7 @@ No firmware updates required! ✅
 ## 🚀 Deployment notes
 - **New Flo APK?**: YES
 - **New backend services**: WDS
-- **Updated backend services**: CTB, CVS, GAS, IMS, ITS, URS
+- **Updated backend services**: CTB, CVS, GAS, IMS, ITS, RAS, RMS, RSS, URS
 - **Database migrations**: NONE
 - **Downtime requirements**: 30 minutes of full system downtime
 
