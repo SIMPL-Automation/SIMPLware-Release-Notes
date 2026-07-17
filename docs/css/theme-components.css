@@ -59,8 +59,12 @@
 }
 
 img {
-    text-align: center;
-    border: 0.25em; 
+    display: block;
+    max-height: 30em;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    border: 0.25em;
     border-style: solid;
     border-radius: 0.75em;
 }
