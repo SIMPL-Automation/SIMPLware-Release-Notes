@@ -37,7 +37,6 @@ Flo now supports both **hot dog** and **hamburger** tote compartment configurati
 - Ants should no longer periodically stop while driving long distances [#7743]
 - Ants no longer get close enough to gridlock each other in certain cases [#7713] [#7756]
 - Empty Ants should now distribute more evenly between multiple workstations based on WIP calculations [#7749] [#7729]
-- Further reduced the time it takes for an Ant to start moving again after dropping off a tote with inventory into a P&D (follow-up from 3.0.2) [#7744]
 - Ants should no longer get stuck at the position just before the presentation position in a workstation [#7750] [#7767]
 - Ants carrying totes with compartments other than the compartment types currently being requested by the workstation should now auto-dismiss after presenting [#7755] [#7775]
 - Dynamic Pick Stations should now request the right number of totes and Ants [#7709]
@@ -58,7 +57,7 @@ No firmware updates required! ✅
 - Compartment-specific demand shows as "Requesting empty totes" in Flo [#7800]
 - Workstations sometimes show as Off in Flo when Tote Induction is enabled [#7779]
 - Sometimes Flo Tote Induction is stuck in a Pending status [#7766]
-- Compartment containers can not be tapped in Flo to show a compartment detail screen [#????]
+- Ants sometimes take longer than expected to start moving again after dropping off a tote with inventory into a P&D [#7744]
 
 ## 🚀 Deployment notes
 - **New robot firmware?**: YES
