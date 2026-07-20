@@ -58,13 +58,14 @@ No firmware updates required! ✅
 - Workstations sometimes show as Off in Flo when Tote Induction is enabled [#7779]
 - Sometimes Flo Tote Induction is stuck in a Pending status [#7766]
 - Ants sometimes take longer than expected to start moving again after dropping off a tote with inventory into a P&D [#7744]
+- Sometimes compartments are not tapable in Flo and show the incorrect icon [#7807]
 
 ## 🚀 Deployment notes
-- **New robot firmware?**: YES
+- **New robot firmware?**: NO
 - **New Flo APK?**: YES
 - **New backend services**: NONE
 - **Updated backend services**: AMS, CVS, DPS, GAS, IMS, LM, RCS, RES, RMS, RQS, SASG
-- **Database migrations**: NONE
+- **Database migrations**: See note below
 - **Downtime requirements**: 30 minutes of full system downtime
 
 For the **new compartment icons** to work correctly in Flo, you'll need to make sure your container templates are configured with the following **valid labels**. Anything outside of these labels will show a ? compartment icon in Flo.
