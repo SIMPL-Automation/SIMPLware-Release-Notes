@@ -91,7 +91,7 @@ RUN echo 'chmod +x ${PROJECT_ROOT}/scripts/*.sh' >> ~/.zshrc
 RUN echo "# Source aliases and functions" >> ~/.zshrc && \
     echo "source ${PROJECT_ROOT}/.devcontainer/aliases" >> ~/.zshrc && \
     echo "source ${PROJECT_ROOT}/scripts/functions.sh" >> ~/.zshrc && \
-    echo "# Source zsh configuration (p10k, history, cursor, etc.)" >> ~/.zshrc && \
+    echo "# Source zsh configuration (p10k, cursor, etc.)" >> ~/.zshrc && \
     echo "source ${PROJECT_ROOT}/.devcontainer/zsh-config.zsh" >> ~/.zshrc
 
 # Configure workspace as safe directory for git

@@ -8,17 +8,6 @@ source ${PROJECT_ROOT}/scripts/functions.sh
 export_terminal_colors
 source ${PROJECT_ROOT}/.p10k.zsh
 
-export HISTFILE=/home/dev/workspace/.zsh_history
-export HISTSIZE=50000
-export SAVEHIST=50000
-setopt SHARE_HISTORY
-setopt APPEND_HISTORY
-setopt INC_APPEND_HISTORY
-
-if [ -f "${HISTFILE}" ]; then
-  fc -R "${HISTFILE}" 2>/dev/null || true
-fi
-
 if [ -d "${PROJECT_ROOT}/scripts" ]; then
   chmod +x ${PROJECT_ROOT}/scripts/*.sh 2>/dev/null || true
 fi
