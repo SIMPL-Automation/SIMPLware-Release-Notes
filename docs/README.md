@@ -13,6 +13,61 @@
 
 > **NOTE**: SIMPL ticket numbers look like this: [#1234]
 
+# v3.0.4 - Bug bash + Better Tote Induction
+<div class=h1Subtitle>
+2026.07.25
+</div>
+
+## ✨ Shiny new stuff
+Sorry, just the shiny old stuff for now 〰️
+
+## ⏫ Level-ups
+### ➕ Improved tote induction workflow [#7727]
+Flo has a more intuitive and less error-prone tote induction workflow!
+
+![Flo new tote induction workflow](_media/screenshots/3.0.4/FloNewToteInduction.png)
+
+- Compartment selection is first now, since totes are automatically created after verifying barcodes
+- Compartment selection and Ant dismiss buttons are disabled during in-flight operations to prevent accidental presses
+- When teleporting a tote from the Orphanage, Flo will auto-select the compartment configuration for that tote
+- After scanning a tote that already exists in the system (other than orphans), the warning snackbar must now be manually dismissed with the X button so you can take note of the scanned tote and its current location
+
+## 🪲 Bug fixes
+- Mantises and Ants should no longer go offline due to lack of frequent-enough MQTT heartbeats [#7410]
+- Ants should no longer need to be manually rebooted due to infinite reconnect attempts [#7760]
+- Ants should no longer overshoot their target commanded position, causing overlapping reservation gridlocks [#7820] [#7842]
+- The Mantis fullness calculation has been improved, which should result in better distribution of totes during Tote Induction [#7826]
+- Ants should no longer take longer than expected to start moving again after dropping off a tote with inventory into a P&D [#7731] [#7813]
+- Flo no longer inaccurately reports that an empty Ant is carrying a tote after presenting during Tote Induction [#7712] [#7715]
+- Flo no longer allows the accidental deletion of totes after dismissing Ants during Tote Induction [#7675] [#7684]
+- Totes in the Orphanage now accurately show in Flo on the Orphanage Detail screen [#7861]
+- The select-all button on the Layout screen now only selects robots that are visible in the card list (excludes filtered robots) [#7860]
+- Flo no longer blocks you from entering the Tote Induction Operations screen sometimes after starting Tote Induction at a workstation [#7611] [#7766] [#7808]
+- Flo now shows empty compartment demand correctly, instead of as "Empty totes" [#7800]
+- Flo no longer shows the "hamburger" icon for 600✕200 compartments on the Tote Detail screen [#7835]
+- Compartments are now tappable from the Tote Detail screen [#7852] [#7807]
+- The robots filter button is now shown on the robots side sheet on mobile [#7860]
+
+## 🤖 Firmware updates
+TBD
+
+## 🧪 Development improvements
+Nothing to see here 🙈
+
+## 🚧 Known issues
+- The Flo layout is a bit sluggish when tunnels are visible [#7821]
+- On the Flo Area screens, incoming transfers are not visible until the first Ant arrives at the workstation [#7821]
+- Workstations sometimes show as Off in Flo when Tote Induction is enabled [#7779]
+
+## 🚀 Deployment notes
+- **New robot firmware?**: YES
+- **New Flo APK?**: YES
+- **New backend services**: NONE
+- **Updated backend services**: AVS, CVS, IMS, RMS, SASG
+- **Database migrations**: NONE
+- **Downtime requirements**: 1 hour of full system downtime
+
+
 # v3.0.3 - Ant traffic school
 <div class=h1Subtitle>
 2026.07.20
