@@ -34,8 +34,6 @@ Flo has a more intuitive and less error-prone tote induction workflow!
 
 ## 🪲 Bug fixes
 - Mantises and Ants should no longer go offline due to lack of frequent-enough MQTT heartbeats [#7410]
-- Ants should no longer need to be manually rebooted due to infinite reconnect attempts [#7760]
-- Ants should no longer overshoot their target commanded position, causing overlapping reservation gridlocks [#7820] [#7842]
 - The Mantis fullness calculation has been improved, which should result in better distribution of totes during Tote Induction [#7826]
 - Ants should no longer take longer than expected to start moving again after dropping off a tote with inventory into a P&D [#7731] [#7813]
 - Flo no longer inaccurately reports that an empty Ant is carrying a tote after presenting during Tote Induction [#7712] [#7715]
@@ -49,12 +47,14 @@ Flo has a more intuitive and less error-prone tote induction workflow!
 - The robots filter button is now shown on the robots side sheet on mobile [#7860]
 
 ## 🤖 Firmware updates
-TBD
+No firmware updates required! ✅
 
 ## 🧪 Development improvements
 Nothing to see here 🙈
 
 ## 🚧 Known issues
+- Ants sometimes need to be manually rebooted due to infinite reconnect attempts [#7760]
+- Ants sometimes overshoot their target commanded position, causing overlapping reservation gridlocks [#7820] [#7842]
 - The Flo layout is a bit sluggish when tunnels are visible [#7821]
 - On the Flo Area screens, incoming transfers are not visible until the first Ant arrives at the workstation [#7821]
 - Workstations sometimes show as Off in Flo when Tote Induction is enabled [#7779]
