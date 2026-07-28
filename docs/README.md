@@ -61,7 +61,7 @@ Nothing to see here 🙈
 
 ## 🚀 Deployment notes
 - **New robot firmware?**: YES
-- **New Flo APK?**: YES
+- **New Flo APK?**: v4.5.16
 - **New backend services**: NONE
 - **Updated backend services**: AVS, CVS, IMS, RMS, SASG
 - **Database migrations**: NONE
