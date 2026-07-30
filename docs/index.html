@@ -154,6 +154,91 @@
                             textNode.parentNode.replaceChild(frag, textNode);
                         });
                     });
+                },
+                function (hook, vm) {
+                    var RELEASE_HEADER_RE = /^#\s+v\d+\.\d+\.\d+\b/m;
+                    var BTN_ID = 'upcoming-release-btn';
+                    var hasUpcoming = null;
+                    var fetchPromise = null;
+
+                    function ensureUpcomingStatus() {
+                        if (hasUpcoming !== null) {
+                            return Promise.resolve(hasUpcoming);
+                        }
+                        if (fetchPromise) {
+                            return fetchPromise;
+                        }
+                        fetchPromise = fetch('upcoming.md')
+                            .then(function (res) {
+                                if (!res.ok) {
+                                    hasUpcoming = false;
+                                    return false;
+                                }
+                                return res.text();
+                            })
+                            .then(function (text) {
+                                if (typeof text !== 'string') {
+                                    return hasUpcoming;
+                                }
+                                hasUpcoming = RELEASE_HEADER_RE.test(text);
+                                return hasUpcoming;
+                            })
+                            .catch(function () {
+                                hasUpcoming = false;
+                                return false;
+                            });
+                        return fetchPromise;
+                    }
+
+                    function removeUpcomingButton() {
+                        var existing = document.getElementById(BTN_ID);
+                        if (existing) {
+                            existing.remove();
+                        }
+                    }
+
+                    function isOnUpcomingPage() {
+                        var path = (window.location.hash || '')
+                            .replace(/^#/, '')
+                            .split('?')[0];
+                        return path === '/upcoming' || path === 'upcoming';
+                    }
+
+                    function injectUpcomingButton() {
+                        if (window.SIMPL_GATE && !window.SIMPL_GATE.isUnlocked()) {
+                            removeUpcomingButton();
+                            return;
+                        }
+
+                        var onUpcoming = isOnUpcomingPage();
+                        var link = document.getElementById(BTN_ID);
+                        if (!link) {
+                            link = document.createElement('a');
+                            link.id = BTN_ID;
+                            link.className = 'upcoming-release-btn';
+                            document.body.appendChild(link);
+                        }
+
+                        if (onUpcoming) {
+                            link.href = '#/README';
+                            link.textContent = '⮢ Back to official releases';
+                        } else {
+                            link.href = '#/upcoming';
+                            link.textContent = '🚀 New release incoming!';
+                        }
+                    }
+
+                    function syncUpcomingButton() {
+                        ensureUpcomingStatus().then(function (show) {
+                            if (show) {
+                                injectUpcomingButton();
+                            } else {
+                                removeUpcomingButton();
+                            }
+                        });
+                    }
+
+                    hook.doneEach(syncUpcomingButton);
                 }
             ]
         };

@@ -2,7 +2,30 @@
     background-color: var(--color-simpl-night);
 }
 
-.markdown-section h1#simplware-release-notes {
+.upcoming-release-btn {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 100;
+    display: inline-block;
+    padding: 0.55rem 0.85rem;
+    border-radius: var(--border-radius-l, 0.5rem);
+    background-color: var(--color-simpl-rain);
+    color: var(--color-simpl-night) !important;
+    font-weight: 600;
+    font-size: 0.95em;
+    text-align: center;
+    text-decoration: none !important;
+    box-shadow: 0 0.25rem 0.75rem hsl(208 59% 11% / 0.35);
+}
+
+.upcoming-release-btn:hover {
+    background-color: var(--color-simpl-sky);
+    color: var(--color-simpl-night) !important;
+}
+
+.markdown-section h1#simplware-release-notes,
+.markdown-section h1#upcoming-release {
     background-image: none;
     color: var(--color-simpl-rain);
     border-radius: none;

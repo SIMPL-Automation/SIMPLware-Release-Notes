@@ -164,6 +164,46 @@ async function waitForDocsifyContent(page) {
   );
 }
 
+async function pageHasRelease(page, version) {
+  return page.evaluate((ver) => {
+    const root = document.querySelector('.markdown-section');
+    if (!root) {
+      return false;
+    }
+    return [...root.querySelectorAll(':scope > h1')].some((h) =>
+      new RegExp(`^v${ver}\\b`, 'i').test(h.textContent.trim())
+    );
+  }, version);
+}
+
+async function loadReleasePage(page, base, version) {
+  const routes = ['#/README', '#/upcoming'];
+  let lastError;
+
+  for (const hash of routes) {
+    await page.goto(`${base}/${hash}`, {
+      waitUntil: 'networkidle2',
+      timeout: 60000,
+    });
+    try {
+      await waitForDocsifyContent(page);
+    } catch (err) {
+      lastError = err;
+      continue;
+    }
+    if (await pageHasRelease(page, version)) {
+      return hash;
+    }
+  }
+
+  if (lastError) {
+    throw lastError;
+  }
+  throw new Error(
+    `Release v${version} not found in README.md or upcoming.md`
+  );
+}
+
 async function isolateReleaseSection(page, version) {
   const result = await page.evaluate((ver) => {
     const root = document.querySelector('.markdown-section');
@@ -196,7 +236,7 @@ async function isolateReleaseSection(page, version) {
     document.body.classList.add('release-pdf-export');
     const style = document.createElement('style');
     style.textContent = `
-      .sidebar, .sidebar-toggle, .github-corner, nav.app-nav { display: none !important; }
+      .sidebar, .sidebar-toggle, .github-corner, nav.app-nav, #upcoming-release-btn { display: none !important; }
       main { margin: 0 !important; }
       .content { left: 0 !important; padding-top: 0 !important; }
       .markdown-section { max-width: 65em; margin: 0 auto; padding: 1.5rem 2rem 2rem !important; }
@@ -292,11 +332,7 @@ async function main() {
       sessionStorage.setItem(key, '1');
     }, GATE_STORAGE_KEY);
 
-    await page.goto(`${base}/#/README`, {
-      waitUntil: 'networkidle2',
-      timeout: 60000,
-    });
-    await waitForDocsifyContent(page);
+    await loadReleasePage(page, base, version);
 
     const title = await isolateReleaseSection(page, version);
     await page.emulateMediaType('screen');
