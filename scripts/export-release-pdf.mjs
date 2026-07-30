@@ -177,7 +177,7 @@ async function pageHasRelease(page, version) {
 }
 
 async function loadReleasePage(page, base, version) {
-  const routes = ['#/README', '#/upcoming'];
+  const routes = ['#/README', '#/upcoming', '#/archive'];
   let lastError;
 
   for (const hash of routes) {
@@ -200,7 +200,7 @@ async function loadReleasePage(page, base, version) {
     throw lastError;
   }
   throw new Error(
-    `Release v${version} not found in README.md or upcoming.md`
+    `Release v${version} not found in README.md, upcoming.md, or archive.md`
   );
 }
 

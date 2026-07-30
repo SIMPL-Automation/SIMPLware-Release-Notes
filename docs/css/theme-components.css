@@ -24,14 +24,39 @@
     color: var(--color-simpl-night) !important;
 }
 
+.archive-releases-btn {
+    display: block;
+    width: fit-content;
+    margin: 3rem auto 1.5rem;
+    padding: 0.9rem 1.75rem;
+    border-radius: var(--border-radius-l, 0.5rem);
+    background-color: var(--color-simpl-rain);
+    color: var(--color-simpl-night) !important;
+    font-weight: 600;
+    font-size: 1.35em;
+    text-align: center;
+    text-decoration: none !important;
+}
+
+.archive-releases-btn--top {
+    margin: 0 auto 0.75rem;
+}
+
+.archive-releases-btn:hover {
+    background-color: var(--color-simpl-sky);
+    color: var(--color-simpl-night) !important;
+}
+
 .markdown-section h1#simplware-release-notes,
-.markdown-section h1#upcoming-release {
+.markdown-section h1#upcoming-release,
+.markdown-section h1#archived-releases {
     background-image: none;
     color: var(--color-simpl-rain);
     border-radius: none;
     font-size: var(--font-size-xxl);
     font-weight: 400;
     text-align: start;
+    margin-top: 0;
     margin-bottom: -0.3em;
 }
 

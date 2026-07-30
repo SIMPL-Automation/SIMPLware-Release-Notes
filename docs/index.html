@@ -160,6 +160,23 @@
                     var BTN_ID = 'upcoming-release-btn';
                     var hasUpcoming = null;
                     var fetchPromise = null;
+                    var scrollTopPending = false;
+
+                    function requestScrollTop() {
+                        scrollTopPending = true;
+                    }
+
+                    function scrollToTop() {
+                        window.scrollTo(0, 0);
+                        document.documentElement.scrollTop = 0;
+                        document.body.scrollTop = 0;
+                        ['.content', 'main', '.markdown-section'].forEach(function (sel) {
+                            var el = document.querySelector(sel);
+                            if (el) {
+                                el.scrollTop = 0;
+                            }
+                        });
+                    }
 
                     function ensureUpcomingStatus() {
                         if (hasUpcoming !== null) {
@@ -216,6 +233,7 @@
                             link = document.createElement('a');
                             link.id = BTN_ID;
                             link.className = 'upcoming-release-btn';
+                            link.addEventListener('click', requestScrollTop);
                             document.body.appendChild(link);
                         }
 
@@ -228,6 +246,17 @@
                         }
                     }
 
+                    function bindArchiveButton() {
+                        var archiveBtns = document.querySelectorAll('.archive-releases-btn');
+                        archiveBtns.forEach(function (archiveBtn) {
+                            if (archiveBtn.dataset.scrollBound === '1') {
+                                return;
+                            }
+                            archiveBtn.dataset.scrollBound = '1';
+                            archiveBtn.addEventListener('click', requestScrollTop);
+                        });
+                    }
+
                     function syncUpcomingButton() {
                         ensureUpcomingStatus().then(function (show) {
                             if (show) {
@@ -238,7 +267,15 @@
                         });
                     }
 
-                    hook.doneEach(syncUpcomingButton);
+                    hook.doneEach(function () {
+                        bindArchiveButton();
+                        syncUpcomingButton();
+                        if (scrollTopPending) {
+                            scrollTopPending = false;
+                            // Defer until Docsify finishes layout after route change.
+                            setTimeout(scrollToTop, 0);
+                        }
+                    });
                 }
             ]
         };
