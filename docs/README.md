@@ -13,6 +13,78 @@
 
 > **NOTE**: SIMPL ticket numbers look like this: [#1234]
 
+# v3.0.5 - Ants on demand
+<div class=h1Subtitle>
+2026.08.05
+</div>
+
+## ✨ Shiny new stuff
+Sorry, just the shiny old stuff for now 〰️
+
+## ⏫ Level-ups
+### ⚖️ Tote Induction Ant request control in Flo [#7734]
+You can now **directly control** the number of Ants you would like to request at each workstation for Tote Induction in Flo!
+
+![Flo Tote Induction demand control](_media/screenshots/3.0.5/FloToteInductionDemandControl.png)
+
+- The **Tote Induction card** has gotten a bit of a **makeover** that makes controlling Tote Induction more intuitive
+- Tap on the **Ant request tile** to set the number of Ants you would like to request for the workstation
+- The Ant request setting can be updated **before** or **during** Tote Induction
+
+### 🗺️ Flo Layout optimizations [#7821]
+The **Layout** in Flo has a couple of new improvements!
+
+![Flo Ant nodes in layout](_media/screenshots/3.0.5/FloLayoutNodes.png)
+
+- When **targeting** a robot, Flo no longer **zooms** in really close to the robot (keeps your **current zoom** level)
+- You can now see **Ant nodes** from **farther away**, and Ant node visibility is now **dynamically adjusted** based on the size of your screen
+- **Tunnel visibility** is **disabled** by default to help with performance
+
+## 🪲 Bug fixes
+- Robots should no longer get stuck in gridlocks due to overlapping reservations [#7713] [#7927]
+- Ants should no longer fail tasks with "Future state not match" errors when trying to move just after coming to a stop [#7904]
+- Ants should no longer overshoot their target commanded position, causing overlapping reservation gridlocks and "Diff drive" task failures [#7842] [#7439] [#7382] [#7713] [#7461] [#7820]
+- Ants should no longer need to be manually rebooted due to infinite reconnect attempts [#7737] [#7760]
+- When a Mantis detects product protruding above the top of a tote after extract, it now puts the tote back on the shelf it extracted it from [#7998]
+- Totes tagged for pull quarantine will no longer be delivered to Workstations when the product in them is requested by the Workstation [#7936]
+- Ant should now be able to exit DPS workstations after being cleared [#8003]
+- Mantis Physical Audit should now work correctly [#7928] [#7929]
+- Mantis P&D offset collection should now work correctly [#7922] [#7937]
+- An additional confirmation dialog has been added to Flo when trying to shift an Ant into Manual while it is presenting at a workstation [#7933]
+- During Flo Tote Induction, when an existing orphan tote is selected, the compartment selection now clears on all devices monitoring that workstation [#7945] [#7946] [#7862]
+- Totes with inventory can no longer be deleted unless the inventory is first deleted [#7919] [#7920] [#7865] [#7902]
+- Some dialog verbiage cleanup in Flo [#7969]
+- Some capitalization fixes in Flo [#7863] [#7954]
+
+## 🤖 Firmware updates
+### Ant 3.0
+- NXP: `Ant-hwE1-v0.14.0-4-gee33deb`
+
+## 🧪 Development improvements
+- New Inventory Export API can be used to export inventory independent of containers [#7856]
+- Additional Puls analytics data being collected for Ant task failures and updates [#7839] [#7971]
+- SOS has been updated to the latest SIMPL SDK version [#7914] [#7921]
+- Orphaning totes now produces `container.moved.RCS` and `tote.moved` Kafka messages [#7918]
+- Ants now publish to MQTT topic `robot/connection/status` whenever they successfully connect to EMQX, and EMQX itself publishes to that same topic whenever an Ant disconnects from EMQX [#6964]
+- ADAS and SASG have been updated to consume the new Area Demand Update Kafka topic [#7819]
+- Several services have been updated to eliminate duplicate unused concurrent Kafka connections [#7974] [#7975] [#7961]
+- `RedisMigrator` is now available in the SIMPL SDK to make writing and deploying data migrations easier [#6697]
+  - This was deployed in an earlier release but missed tracking on release notes
+
+## 🚧 Known issues
+- All robots show as offline in Flo about once every 10 minutes [#7978]
+- On the Flo Area screens, incoming transfers are not visible until the first Ant arrives at the workstation [#?????]
+- Workstations sometimes show as Off in Flo when Tote Induction is enabled [#7779]
+
+## 🚀 Deployment notes
+- **New robot firmware?**: YES
+- **New Flo APK?**: v4.5.23
+- **New backend services**: NONE
+- **Updated backend services**: ACAR, ADAS, AVS, CTB, CTS, CVS, DPS, GAS, IMS, IOCS, ITS, POP, PUT, RAS, RES, RQS, RVS, SASG, SOS, WDS
+- **Database migrations**: NONE
+- **Downtime requirements**: 30 minutes of full system downtime
+
+
 # v3.0.4 - Bug bash + Better Tote Induction
 <div class=h1Subtitle>
 2026.07.25
