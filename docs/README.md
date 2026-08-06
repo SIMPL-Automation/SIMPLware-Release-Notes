@@ -73,7 +73,7 @@ The **Layout** in Flo has a couple of new improvements!
 
 ## 🚧 Known issues
 - All robots show as offline in Flo about once every 10 minutes [#7978]
-- On the Flo Area screens, incoming transfers are not visible until the first Ant arrives at the workstation [#?????]
+- On the Flo Area screens, incoming transfers are not visible until the first Ant arrives at the workstation [#7836]
 - Workstations sometimes show as Off in Flo when Tote Induction is enabled [#7779]
 
 ## 🚀 Deployment notes
