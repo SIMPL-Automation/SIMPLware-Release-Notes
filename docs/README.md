@@ -13,7 +13,6 @@
 
 > **NOTE**: SIMPL ticket numbers look like this: [#1234]
 
-
 # v3.0.5 - Ants on demand
 <div class=h1Subtitle>
 2026.08.05
@@ -59,7 +58,7 @@ The **Layout** in Flo has a couple of new improvements!
 
 ## 🤖 Firmware updates
 ### Ant 3.0
-- NXP: `Ant-hwE1-v0.14.0-4-gee33deb`
+- NXP: `Ant-hwE1-v0.14.0-5-gd1a50c5`
 
 ## 🧪 Development improvements
 - New Inventory Export API can be used to export inventory independent of containers [#7856]
