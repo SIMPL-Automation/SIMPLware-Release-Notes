@@ -13,6 +13,7 @@
 
 > **NOTE**: SIMPL ticket numbers look like this: [#1234]
 
+
 # v3.0.5 - Ants on demand
 <div class=h1Subtitle>
 2026.08.05
