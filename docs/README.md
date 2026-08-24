@@ -11,7 +11,7 @@
 - Robot mechanics
 - Layout and physical infrastructure
 
-> **NOTE**: SIMPL ticket numbers look like this: [#1234]
+> **NOTE**: SIMPL clickable ticket links look like this: <span class="ticket-tag">[#1234]</span>
 
 # v3.0.5 - Ants on demand
 <div class=h1Subtitle>

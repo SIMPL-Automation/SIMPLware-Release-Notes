@@ -91,6 +91,112 @@
     </script>
 
     <script>
+        // Ticket tag rendering, shared by the Docsify plugin and the PDF export script.
+        (function () {
+            var TICKET_URL_BASE = 'https://dev.azure.com/SimplAutomation/SIMPLware/_workitems/edit/';
+            var TICKET_RE = /\[#(\d+)\]/g;
+            var HAS_TICKET_RE = /\[#\d+\]/;
+
+            function createTag(doc, label, ticketNumber) {
+                var link = doc.createElement('a');
+                link.className = 'ticket-tag';
+                link.href = TICKET_URL_BASE + ticketNumber;
+                link.target = '_blank';
+                link.rel = 'noopener noreferrer';
+                link.title = 'Open ticket #' + ticketNumber + ' in Azure DevOps';
+                link.textContent = label;
+                return link;
+            }
+
+            function buildFragment(doc, text) {
+                var frag = doc.createDocumentFragment();
+                var lastIndex = 0;
+                var match;
+
+                TICKET_RE.lastIndex = 0;
+                while ((match = TICKET_RE.exec(text)) !== null) {
+                    if (match.index > lastIndex) {
+                        frag.appendChild(
+                            doc.createTextNode(text.slice(lastIndex, match.index))
+                        );
+                    }
+                    frag.appendChild(createTag(doc, match[0], match[1]));
+                    lastIndex = match.index + match[0].length;
+                }
+
+                if (lastIndex < text.length) {
+                    frag.appendChild(doc.createTextNode(text.slice(lastIndex)));
+                }
+
+                return frag;
+            }
+
+            // Docsify wraps heading text in its own anchor, and anchors cannot nest,
+            // so heading tags are appended to the heading beside that anchor.
+            function appendTagsToHeading(doc, textNode, heading) {
+                var tags = [];
+                var stripped = textNode.nodeValue.replace(
+                    TICKET_RE,
+                    function (label, ticketNumber) {
+                        tags.push(createTag(doc, label, ticketNumber));
+                        return '';
+                    }
+                );
+
+                textNode.nodeValue = stripped.replace(/\s{2,}/g, ' ').replace(/\s+$/, '');
+                tags.forEach(function (tag) {
+                    heading.appendChild(tag);
+                });
+            }
+
+            function linkify(root) {
+                if (!root) {
+                    return;
+                }
+
+                var doc = root.ownerDocument || document;
+                var walker = doc.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
+                var textNodes = [];
+
+                while (walker.nextNode()) {
+                    textNodes.push(walker.currentNode);
+                }
+
+                textNodes.forEach(function (textNode) {
+                    if (!HAS_TICKET_RE.test(textNode.nodeValue) || !textNode.parentElement) {
+                        return;
+                    }
+
+                    // Already a rendered pill (e.g. a visual example that should not link).
+                    if (textNode.parentElement.closest('.ticket-tag')) {
+                        return;
+                    }
+
+                    var parentAnchor = textNode.parentElement.closest('a');
+                    if (!parentAnchor) {
+                        textNode.parentNode.replaceChild(
+                            buildFragment(doc, textNode.nodeValue),
+                            textNode
+                        );
+                        return;
+                    }
+
+                    var heading = parentAnchor.parentElement;
+                    if (heading && /^H[1-6]$/.test(heading.tagName)) {
+                        appendTagsToHeading(doc, textNode, heading);
+                    }
+                });
+            }
+
+            window.SIMPL_TICKETS = {
+                urlBase: TICKET_URL_BASE,
+                createTag: createTag,
+                linkify: linkify,
+            };
+        })();
+    </script>
+
+    <script>
         window.$docsify = {
             name: 'SIMPLware Release Notes',
             repo: '',
@@ -99,60 +205,9 @@
             plugins: [
                 function (hook, vm) {
                     hook.doneEach(function () {
-                        var root = document.querySelector('.markdown-section');
-                        if (!root) {
-                            return;
-                        }
-
-                        var walker = document.createTreeWalker(
-                            root,
-                            NodeFilter.SHOW_TEXT,
-                            null
+                        window.SIMPL_TICKETS.linkify(
+                            document.querySelector('.markdown-section')
                         );
-
-                        var re = /\[#\d+\]/g;
-                        var nodesToProcess = [];
-
-                        while (walker.nextNode()) {
-                            nodesToProcess.push(walker.currentNode);
-                        }
-
-                        nodesToProcess.forEach(function (textNode) {
-                            var text = textNode.nodeValue;
-                            if (!re.test(text)) {
-                                return;
-                            }
-
-                            var frag = document.createDocumentFragment();
-                            var lastIndex = 0;
-                            re.lastIndex = 0;
-
-                            var match;
-                            while ((match = re.exec(text)) !== null) {
-                                if (match.index > lastIndex) {
-                                    frag.appendChild(
-                                        document.createTextNode(
-                                            text.slice(lastIndex, match.index)
-                                        )
-                                    );
-                                }
-
-                                var span = document.createElement('span');
-                                span.className = 'ticket-tag';
-                                span.textContent = match[0];
-                                frag.appendChild(span);
-
-                                lastIndex = match.index + match[0].length;
-                            }
-
-                            if (lastIndex < text.length) {
-                                frag.appendChild(
-                                    document.createTextNode(text.slice(lastIndex))
-                                );
-                            }
-
-                            textNode.parentNode.replaceChild(frag, textNode);
-                        });
                     });
                 },
                 function (hook, vm) {

@@ -100,10 +100,20 @@
     margin-left: 0.2em;
     border-radius: 999px;
     background-color: var(--color-simpl-rain);
-    color: var(--color-simpl-night);
+    color: var(--color-simpl-night) !important;
     font-size: 14px;
     font-weight: 600;
     vertical-align: middle;
+    text-decoration: none !important;
+}
+
+.markdown-section a.ticket-tag:hover,
+.markdown-section a.ticket-tag:focus-visible {
+    background-color: var(--color-simpl-sky);
+}
+
+.markdown-section span.ticket-tag {
+    cursor: default;
 }
 
 img {

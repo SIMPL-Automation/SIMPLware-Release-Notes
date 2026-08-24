@@ -245,37 +245,8 @@ async function isolateReleaseSection(page, version) {
     `;
     document.head.appendChild(style);
 
-    // Ensure ticket tags are styled even if plugin timing races.
-    const re = /\[#\d+\]/g;
-    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
-    const textNodes = [];
-    while (walker.nextNode()) {
-      textNodes.push(walker.currentNode);
-    }
-    textNodes.forEach((textNode) => {
-      const text = textNode.nodeValue;
-      if (!re.test(text) || textNode.parentElement?.classList?.contains('ticket-tag')) {
-        return;
-      }
-      const frag = document.createDocumentFragment();
-      let lastIndex = 0;
-      re.lastIndex = 0;
-      let match;
-      while ((match = re.exec(text)) !== null) {
-        if (match.index > lastIndex) {
-          frag.appendChild(document.createTextNode(text.slice(lastIndex, match.index)));
-        }
-        const span = document.createElement('span');
-        span.className = 'ticket-tag';
-        span.textContent = match[0];
-        frag.appendChild(span);
-        lastIndex = match.index + match[0].length;
-      }
-      if (lastIndex < text.length) {
-        frag.appendChild(document.createTextNode(text.slice(lastIndex)));
-      }
-      textNode.parentNode.replaceChild(frag, textNode);
-    });
+    // Ensure ticket tags are styled and linked even if plugin timing races.
+    window.SIMPL_TICKETS.linkify(root);
 
     return {
       ok: true,
