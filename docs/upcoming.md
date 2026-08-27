@@ -41,6 +41,7 @@ TOM tote selection planning is now **faster** and **more accurate**!
 - Mantises no longer fail tasks with "Expected state not match" errors when encountering end-of-arm sensor issues during a shuffle deposit [#8217]
 - Mantis homing code capture is working again [#8153]
 - Fixed some nav node reservation issues [#8207]
+- Ants no longer slowly "creep" in some cases [#8256]
 - Excess totes no longer arrive at workstations due to fast Mantis planning [#8188]
 - Safety Zone view toggling in Flo no longer resets your visibility settings [#7661]
 - Flo now shows Ant task creation failures [#8027]
@@ -54,7 +55,7 @@ TOM tote selection planning is now **faster** and **more accurate**!
 
 ## 🤖 Firmware updates
 ### Ant 3.0
-- NXP: `Ant-hwE1-v0.15.0-4-gb6c1310`
+- NXP: `Ant-hwE1-v0.16.0-3-g0bdd5eb`
 - Wormhole: `v2.1.8-20260826`
 
 ## 🧪 Development improvements
