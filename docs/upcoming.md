@@ -4,7 +4,7 @@ There's a new release that will be ready soon! These release notes are **incompl
 
 # v3.1.1 - Safer Zones + Faster TOM
 <div class=h1Subtitle>
-2026.08.26
+2026.08.28
 </div>
 
 ## ✨ Shiny new stuff
@@ -37,21 +37,25 @@ TOM tote selection planning is now **faster** and **more accurate**!
 - Ants no longer fail Exit tasks with "Replanning failed" errors [#8222] [#7438]
 - Ants no longer fail DPS Exit tasks with pathing errors [#8201]
 - Mantises no longer fail tasks with failure reasons equal to the name of the Mantis [#8198] [#8200]
-- Mantises no longer sometimes fail tasks when blocked by locked safety zones [#8216]
+- Mantises no longer sometimes fail tasks when blocked by locked Safety Zones [#8216]
 - Mantises no longer fail tasks with "Expected state not match" errors when encountering end-of-arm sensor issues during a shuffle deposit [#8217]
 - Mantis homing code capture is working again [#8153]
 - Fixed some nav node reservation issues [#8207]
 - Excess totes no longer arrive at workstations due to fast Mantis planning [#8188]
-- Safety zone view toggling in Flo no longer resets your visibility settings [#7661]
+- Safety Zone view toggling in Flo no longer resets your visibility settings [#7661]
 - Flo now shows Ant task creation failures [#8027]
 - Flo now shows accurate "Requesting" values on the Areas and Area Detail screens [#6994] [#7036] [#8158]
+- On the Flo Areas screens, incoming transfers are reflected faster when first turning on a workstation [#7836]
+- Flo is more performant when loading containers for the first time after an update [#6768]
 - Robots now show offline in Flo if your device does not receive any updates from SIMPLware within a certain amount of time [#7480]
 - Container enablement is now respected for DPS locations [#8095]
 - DPS stations no longer receive too many empty Ants, and clearing bots at DPS stations no longer causes Ant tasking problems [#8016]
+- Ants no longer miss some startup NXP logs [#8105]
 
 ## 🤖 Firmware updates
 ### Ant 3.0
 - NXP: `Ant-hwE1-v0.15.0-4-gb6c1310`
+- Wormhole: `v2.1.8-20260826`
 
 ## 🧪 Development improvements
 - Container export now supports partial export via optional list of container labels [#8218]
@@ -60,8 +64,9 @@ TOM tote selection planning is now **faster** and **more accurate**!
 - Better planning time logging in TOM [#8197]
 - MOM now uses planning ID in logs for easier diagnosis of issues [#8131]
 - AMS has new Ant task status: REPLANNED [#8212]
-- Gathering new analytics data into the Puls environment [#8182] [#8203]
+- Gathering new analytics data into the Puls environment [#8182] [#8203] [#8260]
 - ITS Redis setup issues resolved [#8185]
+- Ant firmware has some stricter version control [#8105]
 
 ## 🚧 Known issues
 - Flo sometimes inaccurately reports that an Ant has a tote onboard after it presents during Tote Induction [#8190]
@@ -72,14 +77,13 @@ TOM tote selection planning is now **faster** and **more accurate**!
 - Flo sometimes does not accurately reflect the state of a robot for a short time [#8021]
 - Flo allows Ants to have more than one tote on them during tote induction in some cases [#8062]
 - Ants do not detour around Mantises that are in Manual [#7288]
-- On the Flo Areas screens, incoming transfers are not visible until the first Ant arrives at the workstation [#7836]
 - Workstations sometimes show as Off in Flo when Tote Induction is enabled [#7779]
 - IMS has some performance issues when tagging containers [#7228] [#6576]
 
 ## 🚀 Deployment notes
 - **New robot firmware?**: YES
-- **New Flo APK?**: vTBD
+- **New Flo APK?**: v4.6.6
 - **New backend services**: NONE
-- **Updated backend services**: TBD
-- **Database migrations**: TBD
-- **Downtime requirements**: TBD
+- **Updated backend services**: AVS, AMS, CTB, DPS, IMS, IOCS, ITS, LM, LVS, MOM, POP, RES, RMS, RVS, TOM
+- **Database migrations**: NONE
+- **Downtime requirements**: 1 hour of full system downtime
