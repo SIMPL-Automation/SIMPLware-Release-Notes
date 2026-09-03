@@ -22,10 +22,14 @@ Locked safety zones are now **always visible** in the Flo Layout screen.
 
 ## 🪲 Bug fixes
 - Flo no longer freezes for several minutes at startup [#8252]
+- Flo now only allows you to have a single Flo browser tab open at a time to ensure Flo doesn't use too many resources on your device [#8276]
 - Flo no longer sometimes inaccurately reports that an Ant has a tote onboard after it presents during Tote Induction [#8190]
 - Flo no longer sometimes shows that workstations are "Requesting" something when they are not [#7036]
+- Flo now allows teleporting totes to P&D levels [#8289]
 - Updates to the Areas and Area Detail screens in Flo are faster [#7978]
 - Ants don't wait as long under P&Ds after dropping off totes with inventory [#8191] [#7228]
+- Ants no longer travel to invalid locations due to incorrect destination shortening [#8261] [#8280]
+- Ants no longer get stuck entering workstations due to GAS being unable to correctly pull the active node from Redis [#7824] [#8290]
 - Workstations no longer receive extra empty containers at startup in some cases [#8187]
 - Ants no longer get stuck after being cleared while exiting DPS workstations [#8193]
 - Task creation failures now show separately from task failures in Flo [#8214]
