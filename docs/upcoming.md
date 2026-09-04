@@ -5,35 +5,46 @@ There's a new release that will be ready soon! These release notes are **incompl
 
 # v3.1.2 - TBD
 <div class=h1Subtitle>
-TBD
+2026.09.08
 </div>
 
 ## ✨ Shiny new stuff
-TBD
-<!-- Sorry, just the shiny old stuff for now 〰️ -->
+Sorry, just the shiny old stuff for now 〰️
 
 ## ⏫ Level-ups
-TBD
+### 💪 Flo enhancements
+Flo is now more **stable**, **accurate**, and **performant**!
+
+- Updates to the Areas and Area Detail screens in Flo are faster [#7978]
+- Flo now only allows you to have a single Flo browser tab open at a time to ensure Flo doesn't use too many resources on your device [#8276]
+- Tapping the robot alert icon now removes any previous filters you had applied [#7828]
+- Task creation failures now show separately from task failures in Flo [#8214]
+- Flo no longer freezes for several minutes at startup [#8252]
+- Several Flo cache issues have been fixed due to Flo sometimes missing push updates during brief device disconnects. This is expected to resolve Flo presenting outdated information throughout the app, including Container enablement and Safety Zone lock states [#8328] [#8324]
+- Flo no longer sometimes inaccurately reports that an Ant has a tote onboard after it presents during Tote Induction [#8190]
+- Flo no longer sometimes shows that workstations are "Requesting" something when they are not [#7036]
+- Flo no longer allows Ants to carry more than one tote in some cases during Tote Induction [#8057] [#8062]
 
 ### 🦺 Keep an eye on locked Safety Zones [#8239]
 Locked safety zones are now **always visible** in the Flo Layout screen.
 
 <!-- ![Locked safety zones](_media/screenshots/3.1.2/LockedSafetyZones.png) -->
 
+### 📦 Flo teleport enhancements [#8289] [#8277]
+Flo now supports teleporting totes to Storage P&Ds and DPS Workstation shelves
+
+<!-- ![Teleport to DPS](_media/screenshots/3.1.2/TeleportToDps.png) -->
+
+### 🚦 Ant failure detours [#8316]
+Ants will now take **detours** around other Ants that have **failed tasks**.
+
 ## 🪲 Bug fixes
-- Flo no longer freezes for several minutes at startup [#8252]
-- Flo now only allows you to have a single Flo browser tab open at a time to ensure Flo doesn't use too many resources on your device [#8276]
-- Flo no longer sometimes inaccurately reports that an Ant has a tote onboard after it presents during Tote Induction [#8190]
-- Flo no longer sometimes shows that workstations are "Requesting" something when they are not [#7036]
-- Flo now allows teleporting totes to P&D levels [#8289]
-- Updates to the Areas and Area Detail screens in Flo are faster [#7978]
 - Ants don't wait as long under P&Ds after dropping off totes with inventory [#8191] [#7228]
 - Ants no longer travel to invalid locations due to incorrect destination shortening [#8261] [#8280]
-- Ants no longer get stuck entering workstations due to GAS being unable to correctly pull the active node from Redis [#7824] [#8290]
-- Workstations no longer receive extra empty containers at startup in some cases [#8187]
+- Ants no longer get stuck entering workstations due to various issues [#7824] [#8290] [#8288]
+- Workstations no longer receive extra empty containers at startup in some cases [#8187] [#8317]
 - Ants no longer get stuck after being cleared while exiting DPS workstations [#8193]
-- Task creation failures now show separately from task failures in Flo [#8214]
-- Flo no longer allows Ants to carry more than one tote in some cases during Tote Induction [#8057] [#8062]
+- Tote orientations are now correctly emitted in `tote.moved` Kafka messages [#8295]
 
 ## 🤖 Firmware updates
 TBD
@@ -45,7 +56,6 @@ TBD
 - All logs from all bots are now published to the Puls environment from the new BLT service [#6143] [#7634] [#7733]
 - Performance improvements for GAS and DPS container move processing [#8031]
 - Workstations are now configured correctly in QA environments [#7658]
-- The LVS services has been modernized to use the SIMPL SDK [#5789]
 
 ## 🚧 Known issues
 TBD
