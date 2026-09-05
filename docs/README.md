@@ -65,7 +65,7 @@ TOM tote selection planning is now **faster** and **more accurate**!
 - DPS stations no longer receive too many empty Ants, and clearing bots at DPS stations no longer causes Ant tasking problems [#8016]
 - Ants no longer miss some startup NXP logs [#8105]
 
-## 🤖 Firmware updates
+## 💽 Firmware updates
 ### Ant 3.0
 - NXP: `Ant-hwE1-v0.16.0-3-g0bdd5eb`
 - Wormhole: `v2.1.8-20260826`
@@ -141,7 +141,7 @@ Steady as she goes 🚢
 - Kafka brokers are no longer being killed due to excessive memory consumption, resolving several issues [#7974] [#7975] [#7977] [#7976] [#8019]
 - Compartment containers are no longer incorrectly cast to P&D Shelf containers in some edge cases in the SIMPL SDK, causing several issues [#8123]
 
-## 🤖 Firmware updates
+## 💽 Firmware updates
 No firmware updates required! ✅
 
 ## 🧪 Development improvements
@@ -216,7 +216,7 @@ The **Layout** in Flo has a couple of new improvements!
 - Some dialog verbiage cleanup in Flo [#7969]
 - Some capitalization fixes in Flo [#7863] [#7954]
 
-## 🤖 Firmware updates
+## 💽 Firmware updates
 ### Ant 3.0
 - NXP: `Ant-hwE1-v0.14.0-5-gd1a50c5`
 
@@ -278,7 +278,7 @@ Flo has a more intuitive and less error-prone tote induction workflow!
 - Compartments are now tappable from the Tote Detail screen [#7852] [#7807]
 - The robots filter button is now shown on the robots side sheet on mobile [#7860]
 
-## 🤖 Firmware updates
+## 💽 Firmware updates
 No firmware updates required! ✅
 
 ## 🧪 Development improvements
@@ -332,7 +332,7 @@ Flo now supports both **hot dog** and **hamburger** tote compartment configurati
 - After creating, deleting, and re-creating a tote during Flo Tote Induction, tote compartments no longer inaccurately show DELETED in Flo [#7667]
 - During Flo Tote Induction, Flo no longer inaccurately reports that an empty Ant is carrying a tote (the previous tote the Ant inducted) [#7777]
 
-## 🤖 Firmware updates
+## 💽 Firmware updates
 No firmware updates required! ✅
 
 ## 🧪 Development improvements
@@ -394,7 +394,7 @@ Flo has a new children count filter on the Containers screen, allowing users to 
 - Pressing Enter after entering a tote label on the Containers screen now immediately searches for the tote instead of changing focus to the Find container button [#7659]
 - The deletion of totes during Flo Tote Induction now properly updates other devices monitoring the Tote Induction Operations screen [#7665]
 
-## 🤖 Firmware updates
+## 💽 Firmware updates
 No firmware updates required! ✅
 
 ## 🧪 Development improvements
@@ -431,7 +431,7 @@ Steady as she goes 🚢
 - MQTT connectivity fix for Puls analytics [#7689]
 - Some SENSOR_INITIAL_STATE_CHECK_FAULT failures have been resolved [#7663]
 
-## 🤖 Firmware updates
+## 💽 Firmware updates
 No firmware updates required! ✅
 
 ## 🧪 Development improvements
@@ -516,7 +516,7 @@ The Flo Layout screen has a new expandable **visibility menu**!
 - Empty Ant incoming transfers now show correctly in Flo's Area Detail page [#7347]
 - Flo no longer shows an incorrect container enabled/disabled state sometimes [#7500]
 
-## 🤖 Firmware updates
+## 💽 Firmware updates
 ### Mantis 2.5
 - NXP: `v1.11.1-1-gb56fc09`
 - Wormhole: `2.1.6`

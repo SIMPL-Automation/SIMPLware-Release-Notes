@@ -47,8 +47,8 @@ Ants will now take **detours** around other Ants that have **failed tasks**.
 - Flo no longer sometimes shows that workstations are "Requesting" something when they are not [#7036]
 - Flo no longer allows Ants to carry more than one tote in some cases during Tote Induction [#8057] [#8062]
 - Some Flo icons are no longer off-center on smaller screens [#8263]
-- Mantises now correctly select totes for delivery to workstations after bat purview changes [#8299]
-- Ants should no longer get stuck under P&Ds after depositing due to incorrect container reservations [#8125]
+- Mantises now correctly select totes for delivery to workstations after bay purview changes [#8299]
+- Ants no longer get stuck under P&Ds after depositing due to incorrect container reservations [#8125]
 - Ants don't wait as long under P&Ds after dropping off totes with inventory [#8191] [#7228]
 - Ants no longer travel to invalid locations due to incorrect destination shortening [#8261] [#8280]
 - Ants no longer get stuck entering workstations due to various issues [#7824] [#8290] [#8288]
@@ -58,7 +58,7 @@ Ants will now take **detours** around other Ants that have **failed tasks**.
 - Tote orientations are now correctly emitted in `tote.moved` Kafka messages [#8295]
 - Container tagging is faster, improving performance of several operations including Flo container enablement [#6576]
 
-## 🤖 Firmware updates
+## 💽 Firmware updates
 ### Ant 3.1
 TBD
 

@@ -18,7 +18,7 @@ Mantises will now shift up and down vertically to find the correct arm placement
 ## 🪲 Bug fixes
 The exterminator is out of town 🐛
 
-## 🤖 Firmware updates
+## 💽 Firmware updates
 No firmware updates required! ✅
 
 ## 🧪 Development improvements
@@ -51,7 +51,7 @@ Mantis homing code capture now allows for re-capturing coordinates for existing 
 ## 🪲 Bug fixes
 - Container tags are now correctly added to newly created containers [#6735]
 
-## 🤖 Firmware updates
+## 💽 Firmware updates
 No firmware updates required! ✅
 
 ## 🧪 Development improvements
@@ -104,7 +104,7 @@ Manual extract and deposit buttons in Flo only show **when appropriate** based o
 - Flo no longer shows totes as blocked after the blocking tote is teleported to the Orphange [#6360]
 - Typing capital `T` into the Orphanage teleport reason field on Flo Web no longer clears the form [#6361]
 
-## 🤖 Firmware updates
+## 💽 Firmware updates
 No firmware updates required! ✅
 
 ## 🧪 Development improvements
@@ -139,7 +139,7 @@ Steady as she goes 🚢
 - Flo now allows you to teleport Totes to Storage locations that have Aisle and Side labels that are prefixed like `S1-A1-S1` [#6253]
 - SIMPLware will no longer automatically add any default Auto Clear rules [#6272]
 
-## 🤖 Firmware updates
+## 💽 Firmware updates
 No firmware updates required! ✅
 
 ## 🧪 Development improvements
@@ -192,7 +192,7 @@ The Area Demand API now accepts "process by time" in many different formats.
 - Robot counts no longer overlap the Robot filter icon on the Layout screen on smaller Flo devices [#6225]
 - The Android status bar no longer overlaps icons on the Robot Cards side-sheet in Flo [#6227]
 
-## 🤖 Firmware updates
+## 💽 Firmware updates
 No firmware updates required! ✅
 
 ## 🧪 Development improvements
@@ -290,7 +290,7 @@ Steady as she goes 🚢
 - Fixed a bug in Flo where it would sometimes report "Unknown Container" during manual extract of a valid tote [#4919]
 - Flo no longer has visual and audio alerts for auto-cleared Robot task failures [#5025]
 
-## 🤖 Firmware updates
+## 💽 Firmware updates
 No firmware updates required! ✅
 
 ## 🧪 Development improvements
