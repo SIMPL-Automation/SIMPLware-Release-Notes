@@ -35,7 +35,7 @@ When you **enable accessibility** on a tunnel in Flo, you can now capture why!
 - You’re prompted to choose a **resolution reason**
 - That reason is forwarded to **Puls** for analysis
 
-### 🚚 Tote migration by container tag [#8441]
+### 🚚 Tote migration by container tag [#8311] [#8441]
 Tote migration can now filter by **container tag**!
 
 - You can **exclude totes by container tag** when migrating
@@ -61,7 +61,7 @@ No firmware updates required! ✅
 - Ants can sometimes form 4-way gridlocks [#8109]
 - Ants never show in "Moving" state [#7294]
 - CTS sometimes takes a long time to update container tags [#6576]
-- The on-screen keyboard cannot be used during Flo Tote Induction [#7907]
+- The on-screen keyboard cannot be used during Flo Tote Induction [#7905] [#7907]
 - The "No children" indication on the Flo Workstation Detail screen is confusing [#7402]
 - On the Flo Containers screen, when lots of filters are selected, there is no room on smaller screens for the tote cards [#7851]
 - Robots drop some logs at startup [#8099]
