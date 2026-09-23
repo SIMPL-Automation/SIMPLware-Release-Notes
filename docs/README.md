@@ -14,6 +14,68 @@
 > **NOTE**: SIMPL clickable ticket links look like this: <span class="ticket-tag">[#1234]</span>
 
 
+# v3.1.3 - Watch your weight!
+<div class=h1Subtitle>
+2026.09.17
+</div>
+
+## ✨ Shiny new stuff
+Sorry, just the shiny old stuff for now 〰️
+
+## ⏫ Level-ups
+### ⚖️ Tote weight capacity [#7069] [#8434]
+Tote selection now accounts for **weight**, not just empty compartments!
+
+- When choosing a tote for empty compartments, we now also check that it has enough **remaining weight capacity** for what will be placed in it [#7069]
+- Tote weights are **seeded at startup** so that check starts from an accurate picture [#8434]
+
+### 🏷️ Accessible reason capture [#8407]
+When you **enable accessibility** on a tunnel in Flo, you can now capture why!
+
+- You’re prompted to choose a **resolution reason**
+- That reason is forwarded to **Puls** for analysis
+
+### 🚚 Tote migration by container tag [#8441]
+Tote migration can now filter by **container tag**!
+
+- You can **exclude totes by container tag** when migrating
+- Clear a bay of totes that still have inventory (for example **maintenance bays**, or inventory that landed mid-migration) with less manual checking
+
+## 🪲 Bug fixes
+- Ants no longer take a P&D pickup path that WIP would block, so they can still meet robot-type demand instead of getting stuck [#8194]
+- DPS shelves are accessible again on the DPS Workstation Bay Detail screen [#8385]
+- Ants no longer spin at the charger when tasked with an unsupported orientation — path planning fails that case instead [#8394]
+- Flo now correctly supports teleporting to DPS workstation locations [#8405]
+- Ants no longer end up with the wrong orientation after being manually moved with Flo [#8406]
+- Totes now maintain their orientation after being teleported with Flo [#8440]
+- Quarantined compartments no longer show up at workstations when they aren't supposed to [#8448]
+
+## 💽 Firmware updates
+No firmware updates required! ✅
+
+## 🧪 Development improvements
+
+## 🚧 Known issues
+- Robots cannot be manually moved while inside locked Safety Zones [#8226]
+- Workstations sometimes show as Off in Flo when Tote Induction is enabled [#7779]
+- Ants can sometimes form 4-way gridlocks [#8109]
+- Ants never show in "Moving" state [#7294]
+- CTS sometimes takes a long time to update container tags [#6576]
+- The on-screen keyboard cannot be used during Flo Tote Induction [#7907]
+- The "No children" indication on the Flo Workstation Detail screen is confusing [#7402]
+- On the Flo Containers screen, when lots of filters are selected, there is no room on smaller screens for the tote cards [#7851]
+- Robots drop some logs at startup [#8099]
+- Orphaned totes can end up with the wrong orientation after a move [#8497]
+- Pressing Escape on the Flo Tote Induction screen does not return to the Workstation Detail screen when the tote label field has focus [#8342]
+## 🚀 Deployment notes
+- **New robot firmware?**: NO
+- **New Flo APK?**: v4.6.18
+- **New backend services**: NONE
+- **Updated backend services**: ADAS, CTB, CVS, GAS, IMS, LM, MOM, TOM
+- **Database migrations**: NONE
+- **Downtime requirements**: 30 minutes full system downtime
+
+
 # v3.1.2 - Pick up the pace!
 <div class=h1Subtitle>
 2026.09.10
