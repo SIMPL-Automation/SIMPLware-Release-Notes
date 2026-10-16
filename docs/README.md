@@ -54,13 +54,13 @@ Nothing to see here 🙈
 - On the Flo Containers screen, when lots of filters are selected, there is no room on smaller screens for the tote cards [#7851]
 
 ## 🚀 Deployment notes
-- **New robot firmware?**: YES
-- **New Flo APK?**: NO
-- **New backend services**: NONE
-- **Updated backend services**: IMS, RCS, RMS
-- **Database migrations**: NONE
-- **Helm configuration changes**: NONE
-- **Downtime requirements**: 30 minutes full system downtime
+- **New robot firmware?** YES
+- **New Flo APK?** NO
+- **New backend services** NONE
+- **Updated backend services** IMS, RCS, RMS
+- **Database migrations** NONE
+- **Helm configuration changes** NONE
+- **Downtime requirements** 30 minutes full system downtime
 
 # v3.1.4 - Bits and bots
 <div class=h1Subtitle>
@@ -104,13 +104,13 @@ NONE
 - Pressing Escape on the Flo Tote Induction screen does not return to the Workstation Detail screen when the tote label field has focus [#8342]
 
 ## 🚀 Deployment notes
-- **New robot firmware?**: NO
-- **New Flo APK?**: v4.6.21
-- **New backend services**: NONE
-- **Updated backend services**: AVS, GAS, IMS, MOM, RES, RMS
-- **Database migrations**: NONE
-- **Helm configuration changes**: Flo `CT_CONTAINER_TAG_UPDATE` updated for [#8463] (accessible switch timeout) — auto-applied at deploy time
-- **Downtime requirements**: 30 minutes full system downtime
+- **New robot firmware?** NO
+- **New Flo APK?** v4.6.21
+- **New backend services** NONE
+- **Updated backend services** AVS, GAS, IMS, MOM, RES, RMS
+- **Database migrations** NONE
+- **Helm configuration changes** Flo `CT_CONTAINER_TAG_UPDATE` updated for [#8463] (accessible switch timeout) — auto-applied at deploy time
+- **Downtime requirements** 30 minutes full system downtime
 
 # v3.1.3 - Watch your weight!
 <div class=h1Subtitle>
@@ -166,12 +166,12 @@ No firmware updates required! ✅
 - Orphaned totes can end up with the wrong orientation after a move [#8497]
 - Pressing Escape on the Flo Tote Induction screen does not return to the Workstation Detail screen when the tote label field has focus [#8342]
 ## 🚀 Deployment notes
-- **New robot firmware?**: NO
-- **New Flo APK?**: v4.6.18
-- **New backend services**: NONE
-- **Updated backend services**: ADAS, CTB, CVS, GAS, IMS, LM, MOM, TOM
-- **Database migrations**: NONE
-- **Downtime requirements**: 30 minutes full system downtime
+- **New robot firmware?** NO
+- **New Flo APK?** v4.6.18
+- **New backend services** NONE
+- **Updated backend services** ADAS, CTB, CVS, GAS, IMS, LM, MOM, TOM
+- **Database migrations** NONE
+- **Downtime requirements** 30 minutes full system downtime
 
 
 # v3.1.2 - Pick up the pace!
@@ -253,14 +253,14 @@ No firmware updates required! ✅
 - Robots drop some logs at startup [#8099]
 
 ## 🚀 Deployment notes
-- **New robot firmware?**: NO
-- **New Flo APK?**: v4.6.14
-- **New backend services**: NONE
-- **Updated backend services**: ADAS, AMS, AVS, CVS, DPS, GAS, IMS, IOCS, LM, MOM, POP, RES, RVS, TOM
-- **Database migrations**:
+- **New robot firmware?** NO
+- **New Flo APK?** v4.6.14
+- **New backend services** NONE
+- **Updated backend services** ADAS, AMS, AVS, CVS, DPS, GAS, IMS, IOCS, LM, MOM, POP, RES, RVS, TOM
+- **Database migrations**
   - AVS: `ui-area-legacy-cleanup-v3`
     - Cleans `ui:area:<area-label>` keys and replaces them with sub-keys like `ui:area:tags:<area-label>`
-- **Downtime requirements**: 1 hour of full system downtime
+- **Downtime requirements** 1 hour of full system downtime
 
 
 # v3.1.1 - Safer Zones + Faster TOM
@@ -343,12 +343,12 @@ TOM tote selection planning is now **faster** and **more accurate**!
 - IMS has some performance issues when tagging containers [#7228] [#6576]
 
 ## 🚀 Deployment notes
-- **New robot firmware?**: YES
-- **New Flo APK?**: v4.6.6
-- **New backend services**: NONE
-- **Updated backend services**: AVS, AMS, CTB, DPS, IMS, IOCS, ITS, LM, LVS, MOM, POP, RES, RMS, RVS, TOM
-- **Database migrations**: NONE
-- **Downtime requirements**: 1 hour of full system downtime
+- **New robot firmware?** YES
+- **New Flo APK?** v4.6.6
+- **New backend services** NONE
+- **Updated backend services** AVS, AMS, CTB, DPS, IMS, IOCS, ITS, LM, LVS, MOM, POP, RES, RMS, RVS, TOM
+- **Database migrations** NONE
+- **Downtime requirements** 1 hour of full system downtime
 
 
 # v3.1.0 - Meet TOM and MOM
@@ -414,12 +414,12 @@ No firmware updates required! ✅
 - Workstations sometimes show as Off in Flo when Tote Induction is enabled [#7779]
 
 ## 🚀 Deployment notes
-- **New robot firmware?**: NO
-- **New Flo APK?**: v4.6.1
-- **New backend services**: MOM, TOM
-- **Updated backend services**: ACAR, AMS, CTB, CTS, GAS, IOCS, LM, POP, PUT, RAP, RES, RMS, SASG, WDS
-- **Database migrations**: NONE
-- **Downtime requirements**: 1 hour of full system downtime
+- **New robot firmware?** NO
+- **New Flo APK?** v4.6.1
+- **New backend services** MOM, TOM
+- **Updated backend services** ACAR, AMS, CTB, CTS, GAS, IOCS, LM, POP, PUT, RAP, RES, RMS, SASG, WDS
+- **Database migrations** NONE
+- **Downtime requirements** 1 hour of full system downtime
 
 
 # v3.0.5 - Ants on demand
@@ -486,12 +486,12 @@ The **Layout** in Flo has a couple of new improvements!
 - Workstations sometimes show as Off in Flo when Tote Induction is enabled [#7779]
 
 ## 🚀 Deployment notes
-- **New robot firmware?**: YES
-- **New Flo APK?**: v4.5.23
-- **New backend services**: NONE
-- **Updated backend services**: ACAR, ADAS, AVS, CTB, CTS, CVS, DPS, GAS, IMS, IOCS, ITS, POP, PUT, RAS, RES, RQS, RVS, SASG, SOS, WDS
-- **Database migrations**: NONE
-- **Downtime requirements**: 30 minutes of full system downtime
+- **New robot firmware?** YES
+- **New Flo APK?** v4.5.23
+- **New backend services** NONE
+- **Updated backend services** ACAR, ADAS, AVS, CTB, CTS, CVS, DPS, GAS, IMS, IOCS, ITS, POP, PUT, RAS, RES, RQS, RVS, SASG, SOS, WDS
+- **Database migrations** NONE
+- **Downtime requirements** 30 minutes of full system downtime
 
 
 # v3.0.4 - Bug bash + Better Tote Induction
@@ -541,12 +541,12 @@ Nothing to see here 🙈
 - Workstations sometimes show as Off in Flo when Tote Induction is enabled [#7779]
 
 ## 🚀 Deployment notes
-- **New robot firmware?**: YES
-- **New Flo APK?**: v4.5.16
-- **New backend services**: NONE
-- **Updated backend services**: AVS, CVS, IMS, RMS, SASG
-- **Database migrations**: NONE
-- **Downtime requirements**: 1 hour of full system downtime
+- **New robot firmware?** YES
+- **New Flo APK?** v4.5.16
+- **New backend services** NONE
+- **Updated backend services** AVS, CVS, IMS, RMS, SASG
+- **Database migrations** NONE
+- **Downtime requirements** 1 hour of full system downtime
 
 
 # v3.0.3 - Ant traffic school
@@ -597,12 +597,12 @@ No firmware updates required! ✅
 - Sometimes compartments are not tapable in Flo and show the incorrect icon [#7807]
 
 ## 🚀 Deployment notes
-- **New robot firmware?**: NO
-- **New Flo APK?**: YES
-- **New backend services**: NONE
-- **Updated backend services**: AMS, CVS, DPS, GAS, IMS, LM, RCS, RES, RMS, RQS, SASG
-- **Database migrations**: See note below
-- **Downtime requirements**: 30 minutes of full system downtime
+- **New robot firmware?** NO
+- **New Flo APK?** YES
+- **New backend services** NONE
+- **Updated backend services** AMS, CVS, DPS, GAS, IMS, LM, RCS, RES, RMS, RQS, SASG
+- **Database migrations** See note below
+- **Downtime requirements** 30 minutes of full system downtime
 
 For the **new compartment icons** to work correctly in Flo, you'll need to make sure your container templates are configured with the following **valid labels**. Anything outside of these labels will show a ? compartment icon in Flo.
 - EMPTY_TOTE
@@ -653,12 +653,12 @@ Nothing to see here 🙈
 Ghost town 👻
 
 ## 🚀 Deployment notes
-- **New robot firmware?**: NO
-- **New Flo APK?**: YES
-- **New backend services**: NONE
-- **Updated backend services**: AMS, CVS, DPS, GAS, IMS, RES, RVS, SASG
-- **Database migrations**: NONE
-- **Downtime requirements**: 30 minutes of full system downtime
+- **New robot firmware?** NO
+- **New Flo APK?** YES
+- **New backend services** NONE
+- **Updated backend services** AMS, CVS, DPS, GAS, IMS, RES, RVS, SASG
+- **Database migrations** NONE
+- **Downtime requirements** 30 minutes of full system downtime
 
 
 # v3.0.1 - Couple bug fixes
@@ -690,12 +690,12 @@ Nothing to see here 🙈
 Ghost town 👻
 
 ## 🚀 Deployment notes
-- **New robot firmware?**: NO
-- **New Flo APK?**: NO
-- **New backend services**: NONE
-- **Updated backend services**: AMS, DPS, LM, POP, PUT, RES
-- **Database migrations**: NONE
-- **Downtime requirements**: 30 minutes of full system downtime
+- **New robot firmware?** NO
+- **New Flo APK?** NO
+- **New backend services** NONE
+- **Updated backend services** AMS, DPS, LM, POP, PUT, RES
+- **Database migrations** NONE
+- **Downtime requirements** 30 minutes of full system downtime
 
 
 # v3.0.0 - Enter: Ant 3.0
@@ -811,11 +811,11 @@ The Flo Layout screen has a new expandable **visibility menu**!
 Ghost town 👻
 
 ## 🚀 Deployment notes
-- **New robot firmware?**: YES
-- **New Flo APK?**: YES
-- **New backend services**: AMS, DPS, RES
-- **Updated backend services**: ACAR, AVS, CRS, CTB, CTS, CVS, GAS, GDS, IMS, ITS, LM, LVS, RAP, RAS, RMS, RQS, RSS, RVS, SASG, SOS
-- **Database migrations**: YES
-- **Downtime requirements**: 1 hour of full system downtime
+- **New robot firmware?** YES
+- **New Flo APK?** YES
+- **New backend services** AMS, DPS, RES
+- **Updated backend services** ACAR, AVS, CRS, CTB, CTS, CVS, GAS, GDS, IMS, ITS, LM, LVS, RAP, RAS, RMS, RQS, RSS, RVS, SASG, SOS
+- **Database migrations** YES
+- **Downtime requirements** 1 hour of full system downtime
 
 <a class="archive-releases-btn" href="#/archive">🗃️ Archived releases</a>
