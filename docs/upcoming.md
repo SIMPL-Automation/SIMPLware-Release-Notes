@@ -14,7 +14,7 @@ Sorry, just the shiny old stuff for now 〰️
 ### 📏 Container offset updates (backend only) [#8753]
 Tilted uprights? **Shift containers into place** without touching a tote!
 
-- Container offsets can now be updated through a **new Kafka topic**
+- Container offsets can now be updated through a **new ITS ReST endpoint**
 - Every container inside **moves right along with it**, so the whole stack stays lined up
 - This is a **backend-only** change for now, with no Flo screen yet
 
@@ -26,7 +26,7 @@ Setting up robot MQTT is now **one page, no guesswork**!
 - Saved settings are now **applied in the background**, so the page no longer hangs or drops when the network reconnects
 
 ## 🪲 Bug fixes
-- Mantis 2.6 robots no longer show offline due to a firmware issue during shuffle operations, requiring a reboot of the Mantis [#8653] [#8666]
+- Mantis 2.6 robots no longer go offline and need a reboot after a firmware issue during shuffle operations [#8653] [#8666]
 - Robots no longer occasionally lose connection from unused WiFi services, which are now off by default [#8251] [#8460]
 - Ants on the dance floor are no longer blocked by an Ant parked under a workstation, caused by leftover reservations that were never cleared [#8756] [#8757]
 - Mantis robots no longer risk falling when a homing sequence is aborted [#8684]
@@ -35,7 +35,7 @@ Setting up robot MQTT is now **one page, no guesswork**!
 - Tasks no longer hang because Mantis command updates were dropped by an overloaded message broker [#8630]
 - Ants turned away from a full or no-longer-needed workstation no longer get stuck instead of leaving [#8772]
 - Ants A-151 and A-152 can once again plan paths out of their rest positions [#8737]
-- Locations are no longer tagged INACCESSIBLE when a task fails for reasons unrelated to that location [#8760] *(In Dev)*
+- Locations are no longer tagged INACCESSIBLE when a task fails for reasons unrelated to that location [#8760]
 - Tote compartment changes now happen in a single step, so a half-finished reconfiguration can't be left behind [#8752]
 - Mantis and Ant LEDs no longer get stuck on one color pattern [#8598]
 - Robot LED presets and settings no longer occasionally fail to sync to the LED controller [#8309]
