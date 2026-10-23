@@ -242,6 +242,7 @@ async function isolateReleaseSection(page, version) {
       .markdown-section { max-width: 65em; margin: 0 auto; padding: 1.5rem 2rem 2rem !important; }
       .markdown-section h1 { margin-top: 0 !important; }
       .h1Subtitle { margin-bottom: 1em !important; }
+      .h2Subtitle { margin-bottom: 0.3em !important; }
     `;
     document.head.appendChild(style);
 

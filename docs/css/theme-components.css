@@ -84,6 +84,14 @@
     margin-bottom: 0;
 }
 
+.h2Subtitle {
+    text-align: start;
+    color: var(--color-simpl-rain);
+    font-size: var(--font-size-l);
+    font-style: italic;
+    margin-bottom: -0.3em;
+}
+
 .markdown-section h3 {
     color: var(--color-simpl-rain);
     margin-top: 1em;

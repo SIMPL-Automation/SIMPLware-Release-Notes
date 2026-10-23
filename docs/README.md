@@ -18,6 +18,18 @@
 2026.10.21
 </div>
 
+## 🔥 Hotfix v3.1.6.1
+<div class=h2Subtitle>
+2026.10.22
+</div>
+
+### 🪲 Bug fixes
+- Overheight sensors at workstations are working again after the 3.1.6 update [#8813]
+
+### 🚀 Deployment notes
+- **Updated backend services:** DPS, GAS, IOCS, ITS
+- **Downtime requirements:** None
+
 ## ✨ Shiny new stuff
 Sorry, just the shiny old stuff for now 〰️
 
