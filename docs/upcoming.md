@@ -8,29 +8,27 @@ There's a new release that will be ready soon! These release notes are **incompl
 </div>
 
 ## ✨ Shiny new stuff
-### 📡 Bot log streaming [#8736] [#7912] [#7634] [#8265] [#8480] [#8519] [#8520] [#8521] [#8285] [#8287] [#8593]
-Robot logs can now **stream live to Puls**! *(In Dev)*
+### 📡 Bot log streaming [#8736] [#7912] [#7634] [#8265] [#8480] [#8519] [#8520] [#8521]
+Robot logs can now **stream live to Puls**!
 
 ![Bot log streaming](_media/screenshots/3.1.7/BotLogStreaming.png)
 
 - Logs flow from each robot's Wormhole board through the POP service to the **cloud log broker**
 - The Puls PUT service stores the **raw robot logs** in TimescaleDB
-- The RAP service can pull **all logs and task-failure logs** together
-- The RAP service can pull a **whole day of fleet logs** on request
 
 ## ⏫ Level-ups
 ### 🦾 Mantis init with arms out [#8538]
 Mantises can now be initialized **even with their arms out**! No more entering Mantis aisles to manually push them back in!
 
 ### 🚚 Migrate totes across aisles [#8723]
-**Tote Migration** now supports moving totes **between aisles**! *(In Dev)*
+**Tote Migration** now supports moving totes **between aisles**!
 
 - A tote's destination is no longer limited to what its **current Mantis** can reach
 - Migrations still name a source and a destination, so **nothing changes** about how a move is requested
 - No integration with Flo yet; Ants must be manually put in Tote Migration mode using the `robot-process.update` Kafka topic
 
-### 📊 Puls 2.0 [#8419] [#7733] [#8330] [#8524] [#8531] [#8637] [#8810] [#8231] [#8422] [#8424] [#8533]
-Puls now runs on **TimescaleDB**! *(In Dev)*
+### 📊 Puls 2.0 [#8419] [#7733] [#8330] [#8524] [#8531] [#8637] [#8810] [#8231] [#8422] [#8424]
+Puls now runs on **TimescaleDB**!
 
 - The Puls PUT service now reads and writes Puls data in **TimescaleDB** instead of CockroachDB
   - This enables better long-term **compression and archiving** features to support massive amounts of data!
@@ -41,13 +39,13 @@ Puls now runs on **TimescaleDB**! *(In Dev)*
 
 ## 💽 Firmware updates
 ### All robots
-- Wormhole: `TBD`
+- Wormhole: [`v2.2.0-20261027.3`](https://simplautomation.sharepoint.com/:u:/s/Engineering-SIMPLEngineering/IQDnowcQ4qlUSrGMZB7sCfDjAYiKE6caRQRKNUJ36xV1VPU?e=OlFZHi)
 
 ### Mantis 2.5
-- NXP: `TBD`
+- NXP: [`Mantis-hwA4-v1.14.0-2-g65c8d9e-20261027.1`](https://simplautomation.sharepoint.com/:u:/s/Engineering-SIMPLEngineering/IQA8ggDmbqoQSawhEyjdkh9OARhZNks_bpq9EQISBacbCws?e=JaXGSp)
 
 ### Mantis 2.6
-- NXP: `TBD`
+- NXP: [`Mantis-hwC1-v1.14.0-2-g65c8d9e-20261027.1`](https://simplautomation.sharepoint.com/:u:/s/Engineering-SIMPLEngineering/IQA2qch30f7TT7818eaQ6w1ZAZ8F3znu9Ma--OwOdp_GsZY?e=Ebklr7)
 
 ## 🧪 Development improvements
 - puls-admin Timescale commands no longer fail partway through when run over a kubectl port-forward [#8682]
@@ -72,7 +70,7 @@ Puls now runs on **TimescaleDB**! *(In Dev)*
 - **New robot firmware?** YES
 - **New Flo APK?** NO
 - **New backend services:** NONE
-- **Updated backend services:** CTB, MOM, POP, PUT, RAP
+- **Updated backend services:** CTB, MOM, POP, PUT
 - **Database migrations:** New raw robot log tables in TimescaleDB for PUT [#8736]; new `source` column on every Puls table, with existing CockroachDB data copied over using puls-admin [#8524]
 - **Helm configuration changes:** New bot-log EMQX broker config, the POP relay flag `pop.topics.bot-logs.enabled`, and PUT bot-log settings [#8660]; TimescaleDB TLS client certificates [#8643]
 - **Downtime requirements:** All Mantises in Manual with no tasks for 15 minutes
