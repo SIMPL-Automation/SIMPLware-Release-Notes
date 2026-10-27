@@ -19,14 +19,15 @@ Robot logs can now **stream live to Puls**! *(In Dev)*
 - The RAP service can pull a **whole day of fleet logs** on request
 
 ## ⏫ Level-ups
-<!-- ???????Team robot??????? ### 🦾 Mantis arms reset remotely [#8538]
-A Mantis with **arms stuck out** can now reset them **without anyone entering the aisle**! -->
+### 🦾 Mantis init with arms out [#8538]
+Mantises can now be initialized **even with their arms out**! No more entering Mantis aisles to manually push them back in!
 
 ### 🚚 Migrate totes across aisles [#8723]
 **Tote Migration** now supports moving totes **between aisles**! *(In Dev)*
 
 - A tote's destination is no longer limited to what its **current Mantis** can reach
 - Migrations still name a source and a destination, so **nothing changes** about how a move is requested
+- No integration with Flo yet; Ants must be manually put in Tote Migration mode using the `robot-process.update` Kafka topic
 
 ### 📊 Puls 2.0 [#8419] [#7733] [#8330] [#8524] [#8531] [#8637] [#8810] [#8231] [#8422] [#8424] [#8533]
 Puls now runs on **TimescaleDB**! *(In Dev)*
@@ -36,7 +37,7 @@ Puls now runs on **TimescaleDB**! *(In Dev)*
 - Puls SQL views are now **created automatically** for each tenant and site
 
 ## 🪲 Bug fixes
-- Storage robots no longer pause between tasks and slow or stop tote delivery to workstations during heavy load [#8848] *(In Dev)*
+- Storage robots no longer pause between tasks and slow or stop tote delivery to workstations during heavy load [#8848]
 
 ## 💽 Firmware updates
 ### All robots
@@ -52,12 +53,12 @@ Puls now runs on **TimescaleDB**! *(In Dev)*
 - puls-admin Timescale commands no longer fail partway through when run over a kubectl port-forward [#8682]
 - The puls-admin dev container now works on Home Depot laptops by trusting the corporate certificate authority [#8597]
 - The NXP log analyzer tool can now start a local Superset to explore robot log data [#8498]
-- Robot logs are now easier to read on the robot, with full vim and color support in the Wormhole image [#8814] *(In Dev)*
 
 ## 🚧 Known issues
 - IOCS can stop receiving Pub/Sub messages with no clear error until it is restarted [#8657]
 - Robots cannot be manually moved while inside locked Safety Zones [#8226]
 - Ants can sometimes form 4-way gridlocks [#8109]
+- During multi-aisle Tote Migration, Ants in Tote Migration mode with nothing to do sit idle at their last location instead of moving to rest, which can block a Mantis from finishing its migration [#8868]
 - Pressing Escape on the Flo Tote Induction screen does not return to the Workstation Detail screen when the tote label field has focus [#8342]
 - The on-screen keyboard cannot be used during Flo Tote Induction [#7905] [#7907]
 - Workstations sometimes show as Off on the Flo Workstation and Workstation Detail screens when Tote Induction is enabled [#7779]
