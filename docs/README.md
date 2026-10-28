@@ -24,8 +24,9 @@ Robot logs can now **stream live to Puls**!
 
 ![Bot log streaming](_media/screenshots/3.1.7/BotLogStreaming.png)
 
-- Logs flow from each robot's Wormhole board through the POP service to the **cloud log broker**
-- The Puls PUT service stores the **raw robot logs** in TimescaleDB
+- Enable robot log streaming **per bot** using a suite of **MQTT control topics**
+- Logs flow from each robot's **Wormhole board**, through the on-prem **POP service**, to **TimescaleDB** in Puls
+- This will enable **deep robot behavior analytics** for real-time troubleshooting, and **future features** in our pipeline such as robot part lifecycle tracking and Periodic Maintenance scheduling
 
 ## ⏫ Level-ups
 ### 🦾 Mantis init with arms out [#8538]
