@@ -18,6 +18,22 @@
 2026.10.28
 </div>
 
+## 🔥 Hotfix v3.1.7.1
+<div class=h2Subtitle>
+2026.11.02
+</div>
+
+### ⏫ Level-ups
+#### 🐜 Ants reach Aisle 4 [#8905]
+Ants can now **drive into Aisle 4**!
+
+### 🪲 Bug fixes
+- Ants no longer try to travel past a building column or into a P&D blocked by maintenance bays [#8894]
+
+### 🚀 Deployment notes
+- **Updated backend services:** LM
+- **Downtime requirements:** None
+
 ## ✨ Shiny new stuff
 ### 📡 Bot log streaming [#8736] [#7912] [#7634] [#8265] [#8480] [#8519] [#8520] [#8521]
 Robot logs can now **stream live to Puls**!
