@@ -18,6 +18,19 @@
 2026.10.28
 </div>
 
+## 🔥 Hotfix v3.1.7.2
+<div class=h2Subtitle>
+2026.11.06
+</div>
+
+### 🪲 Bug fixes
+- Robots again prioritize urgent workstation demand instead of treating every demand as having no deadline [#9005] [#9006] *(In Dev)*
+- Ant and Mantis workflows no longer get stuck when RES hits a missing gridlock label [#9008]
+
+### 🚀 Deployment notes
+- **Updated backend services:** DPS, GAS, RES
+- **Downtime requirements:** 30 minutes full system downtime
+
 ## 🔥 Hotfix v3.1.7.1
 <div class=h2Subtitle>
 2026.11.02
