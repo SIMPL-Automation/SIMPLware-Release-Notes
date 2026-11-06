@@ -14,6 +14,11 @@
     --color-simpl-night: hsl(208, 59%, 11%);
     --color-simpl-black: hsl(208, 50%, 5%);
     --color-simpl-gray: hsl(210, 11%, 26%);
+    --color-simpl-violet: hsl(270, 45%, 68%);
+    --color-simpl-lavender: hsl(270, 70%, 92%);
+    --color-status-todo: hsl(43, 90%, 60%);
+    --color-status-dev: hsl(25, 90%, 60%);
+    --color-status-qa: hsl(172, 55%, 52%);
     --lightGradient: linear-gradient(to right, var(--color-simpl-night), var(--color-simpl-blue), var(--color-simpl-blue), var(--color-simpl-blue), var(--color-simpl-night));
     --darkGradient: linear-gradient(to right, var(--color-simpl-sky), var(--color-simpl-rain), var(--color-simpl-rain), var(--color-simpl-rain), var(--color-simpl-sky));
 

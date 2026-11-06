@@ -11,7 +11,7 @@
 - Robot mechanics
 - Layout and physical infrastructure
 
-> **NOTE**: SIMPL clickable ticket links look like this: <span class="ticket-tag">[#1234]</span>
+> **NOTE**: SIMPL clickable ticket links look like this: <span class="ticket-tag">[#1234]</span>, and initiative links look like this: <span class="ticket-tag ticket-tag-initiative">[#1234]</span>
 
 # v3.1.7 - Puls check
 <div class=h1Subtitle>
@@ -24,7 +24,7 @@
 </div>
 
 ### 🪲 Bug fixes
-- Robots again prioritize urgent workstation demand instead of treating every demand as having no deadline [#9005] [#9006] *(In Dev)*
+- Robots again prioritize urgent workstation demand instead of treating every demand as having no deadline *(In Dev)* [#9005] [#9006]
 - Ant and Mantis workflows no longer get stuck when RES hits a missing gridlock label [#9008]
 
 ### 🚀 Deployment notes

@@ -248,6 +248,8 @@ async function isolateReleaseSection(page, version) {
 
     // Ensure ticket tags are styled and linked even if plugin timing races.
     window.SIMPL_TICKETS.linkify(root);
+    // The site collapses long tag lists into a hover pill; a PDF can't hover, so show every tag.
+    window.SIMPL_TICKETS.expandTagGroups(root);
 
     return {
       ok: true,

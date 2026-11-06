@@ -104,8 +104,8 @@
 
 .markdown-section .ticket-tag {
     display: inline-block;
-    padding: 0 0.5em;
-    margin-left: 0.2em;
+    padding: 0 0.8em;
+    margin: 0.2em 0 0.2em 0.5em;
     border-radius: 999px;
     background-color: var(--color-simpl-rain);
     color: var(--color-simpl-night) !important;
@@ -120,7 +120,85 @@
     background-color: var(--color-simpl-sky);
 }
 
-.markdown-section span.ticket-tag {
+.markdown-section .ticket-tag-initiative {
+    background-color: var(--color-simpl-violet);
+}
+
+.markdown-section a.ticket-tag-initiative:hover,
+.markdown-section a.ticket-tag-initiative:focus-visible {
+    background-color: var(--color-simpl-lavender);
+}
+
+/* Work status of an unfinished item, e.g. To Do; outlined so it doesn't read as a link. */
+.markdown-section .status-badge {
+    display: inline-block;
+    padding: 0 0.8em;
+    margin: 0.2em 0 0.2em 0.5em;
+    border: 1.5px solid currentColor;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 700;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.markdown-section .status-badge-todo {
+    color: var(--color-status-todo);
+}
+
+.markdown-section .status-badge-dev {
+    color: var(--color-status-dev);
+}
+
+.markdown-section .status-badge-qa {
+    color: var(--color-status-qa);
+}
+
+/* Lines with many tags of one kind show one summary pill; its tags open on hover or focus. */
+.markdown-section .ticket-group {
+    position: relative;
+    display: inline-block;
+}
+
+.markdown-section span.ticket-group-summary {
+    cursor: pointer;
+}
+
+.markdown-section .ticket-group-list {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 10;
+    width: max-content;
+    max-width: 24em;
+    padding: 0.4em 0.4em 0.4em 0.2em;
+    border-radius: var(--border-radius-l);
+    background-color: var(--color-simpl-gray);
+    white-space: normal;
+    line-height: 1.8;
+}
+
+.markdown-section .ticket-group:hover .ticket-group-list,
+.markdown-section .ticket-group:focus-within .ticket-group-list {
+    display: block;
+}
+
+/* Printed and exported PDFs can't hover, so they list every tag inline. */
+@media print {
+    .markdown-section .ticket-group-summary {
+        display: none;
+    }
+
+    .markdown-section .ticket-group-list {
+        display: inline;
+        position: static;
+        padding: 0;
+        background: none;
+    }
+}
+
+.markdown-section span.ticket-tag:not(.ticket-group-summary) {
     cursor: default;
 }
 
