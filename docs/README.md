@@ -20,7 +20,7 @@
 
 ## 🔥 Hotfix v3.2.0.4 [#9199]
 <div class=h2Subtitle>
-TBD
+2026.11.16
 </div>
 
 ### 🪲 Bug fixes
@@ -29,12 +29,14 @@ TBD
 - Ants no longer wait as long for their next task during busy periods [#9196]
 - Flo no longer misses tote and container situation updates when many are published at once [#9228] [#9229]
 - The Tote Detail screen no longer shows tracking for workstations whose demand is already fulfilled [#9189]
+- Applying a level offset now replaces the existing offset instead of adding to it, and new access-node offsets get the waterfall adjustment [#9231]
 
 ### 🚀 Deployment notes
-- **New Flo APK?** YES (version TBD)
-- **Updated backend services:** AVS, GAS, MOM, RQS, SVS
+- **New Flo APK?** YES (v5.0.8)
+- **Updated backend services:** AVS, GAS, ITS, MOM, RQS, SVS
 - **Helm configuration changes:** EMQX max inflight raised from 32 to 128 for emqx and bot-log-emqx (EMQX_MQTT__MAX_INFLIGHT=128, pods recreate on deploy) [#9229]
-- **Downtime requirements:** TBD
+- **Preemptive Kafka memory increase:** Kafka broker memory request/limit raised from 4Gi/6Gi to 8Gi/8Gi for Locust Grove, Waltham and QA environments. [#9232]
+- **Downtime requirements:** Safety zones must be enabled on all workstations for 5 minutes. Some system slowness will occur for 15 minutes during the deployment
 
 ## 🔥 Hotfix v3.2.0.3
 <div class=h2Subtitle>
