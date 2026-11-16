@@ -241,7 +241,13 @@ Every time in Flo now shows in **12-hour format with AM/PM**!
 
 ## 💽 Firmware updates
 ### All robots
-- Wormhole: TBD
+- Wormhole: [`v2.2.1-20261109.2`](https://simplautomation.sharepoint.com/:u:/s/Engineering-SIMPLEngineering/IQA6Qg7pEnJtR5WSuPtuibYCARZdjJXHQi2Moqh3xcPHOIo?e=n2xwAn)
+
+### Mantis 2.5
+- NXP: [`Mantis-hwA4-v1.15.0-20261113.3`](https://simplautomation.sharepoint.com/:u:/s/Engineering-SIMPLEngineering/IQDbyixxD3g2RIAfeg3orxsxAfDEHXIQjHZ2Uocmh8EPyVA?e=9GsdZq)
+
+### Mantis 2.6
+- NXP: [`Mantis-hwC1-v1.15.0-20261113.3`](https://simplautomation.sharepoint.com/:u:/s/Engineering-SIMPLEngineering/IQAnUsqrVOtVRLP5TzD7e6OAAQNFnd7kgVkoFA6euZZmUDA?e=DU3a0b)
 
 ### Ant 3.0
 - NXP: `0.20.0`
