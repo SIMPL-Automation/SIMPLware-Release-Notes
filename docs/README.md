@@ -18,6 +18,69 @@
 2026.11.11
 </div>
 
+## 🔥 Hotfix v3.2.0.3
+<div class=h2Subtitle>
+2026.11.13
+</div>
+
+### ⏫ Level-ups
+#### 📦 Tote Detail is easier to use [#9186]
+Tote Detail now **shows more and jumps around less**!
+
+- Inventory lines show the **full pack label**, description and quantity, and tapping a line copies the pack label
+- Opening a compartment **no longer auto-scrolls** the page, and nothing opens on its own when you arrive
+- Inventory now sits above Ancestry, and the Containers filters include **Inventory count** again
+- Tote icons on container cards now match how the tote sits on the map
+
+### 🪲 Bug fixes
+- A tote whose only problem is a full destination is no longer shown as critical, and the full destination is listed only once [#9184]
+- Tote constraint chips are now ordered red, then yellow, then white, and Demand fulfilled chips are white instead of yellow [#9185]
+- Workstation cards on the Workstations screen now show the same requesting, in transit and at workstation counts as the Workstation Detail screen [#9183]
+
+### 🚀 Deployment notes
+- **New Flo APK?** YES (v5.0.7)
+- **Downtime requirements:** None
+
+## 🔥 Hotfix v3.2.0.2 [#9171]
+<div class=h2Subtitle>
+2026.11.12
+</div>
+
+### ⏫ Level-ups
+#### ⚡ No more slowdowns under heavy demand [#9180] [#9173] [#9175]
+The site now **stays responsive under heavy demand**!
+
+- Product-pack demand no longer overloads the system and slows down every service [#9180]
+- Clearing finished demand no longer bogs the site down every few minutes [#9173]
+- Background checks on containers, areas and situations now run less often and put less load on the system [#9175]
+
+### 🪲 Bug fixes
+- Stuck Ants are now cleared automatically, even when they never report that they've stopped moving [#9177]
+- When auto-replan is turned off, Ants no longer replan on their own after a command fails or a Mantis fails [#9135] [#9136]
+- Changing a Mantis bay assignment in Flo no longer times out while the update takes minutes to go through [#9140]
+- Assigning new bays to a Mantis in Flo no longer shows a timeout after the change has already saved [#9176]
+- Tote icons in Flo now show each tote's real compartments and orientation, and the tote detail minimap matches them [#9119]
+- The Find container button has been removed from the Flo Containers screen [#9174]
+- Flo's Containers detail screen is cleaner: the confusing "As of" heading is gone, and Verify now shows a spinner while it runs [#9174]
+
+### 🚀 Deployment notes
+- **New Flo APK?** YES (v5.0.4)
+- **Updated backend services:** AMS, AVS, CTB, CVS, RMS, RVS, SVS, TOM
+  - Scale TOM down (or use the Recreate strategy) so no old TOM pod is running when the new one starts; it clears and rebuilds its demanded-tote data on startup [#9173]
+- **Downtime requirements:** 30 minutes full system downtime
+
+## 🔥 Hotfix v3.2.0.1
+<div class=h2Subtitle>
+2026.11.12
+</div>
+
+### 🪲 Bug fixes
+- Container teleport in Flo no longer fails on every attempt due to not waiting long enough to download needed containers for selection [#9130]
+
+### 🚀 Deployment notes
+- **New Flo APK?** YES (v5.0.2)
+- **Downtime requirements:** None
+
 ## ✨ Shiny new stuff
 ### 🔎 Dude, where's my tote? [#8338] [#8727] [#8728] [#8729] [#8730] [#8731] [#9022] [#9065] [#9077] [#7647]
 Flo now has **better tracking** of totes and tote issues!
@@ -83,7 +146,7 @@ SIMPLware now supports **requesting entry** into Safety Zones through Safety Gat
 - Opening a Safety Gate **always** moves the zone into an **occupied state** and **halts all movement**, regardless of whether someone requested entry with Flo
 - Safety Gates are mapped to their Safety Zones and imported from the **site layout**
 
-### 🔐 Sign in to Flo with Microsoft [#6146] [#8039] [#8348] [#8395] [#8398] [#8399] [#8981] [#8707] [#8708] [#8108] [#8758] [#8982] [#8830] [#8983] [#8750] [#9027] [#9032] [#9058]
+### 🔐 Sign in to Flo with Microsoft [#6146] [#8750] [#8039] [#8348] [#8395] [#8398] [#8399] [#8981] [#8707] [#8708] [#8108] [#8758] [#8982] [#8830] [#8983] [#9027] [#9032] [#9058]
 Flo now requires a SIMPL or Home Depot **Microsoft account** to sign in!
 
 - Every user needs a **role** to sign in, and users without one are turned away
