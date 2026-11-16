@@ -18,6 +18,24 @@
 2026.11.11
 </div>
 
+## 🔥 Hotfix v3.2.0.4 [#9199]
+<div class=h2Subtitle>
+TBD
+</div>
+
+### 🪲 Bug fixes
+- Flo screens no longer fall behind on area demand during a burst of orders [#9201]
+- Area demand that hasn't changed is no longer resent over and over, cutting load on the system [#9170]
+- Ants no longer wait as long for their next task during busy periods [#9196]
+- Flo no longer misses tote and container situation updates when many are published at once [#9228] [#9229]
+- The Tote Detail screen no longer shows tracking for workstations whose demand is already fulfilled [#9189]
+
+### 🚀 Deployment notes
+- **New Flo APK?** YES (version TBD)
+- **Updated backend services:** AVS, GAS, MOM, RQS, SVS
+- **Helm configuration changes:** EMQX max inflight raised from 32 to 128 for emqx and bot-log-emqx (EMQX_MQTT__MAX_INFLIGHT=128, pods recreate on deploy) [#9229]
+- **Downtime requirements:** TBD
+
 ## 🔥 Hotfix v3.2.0.3
 <div class=h2Subtitle>
 2026.11.13
