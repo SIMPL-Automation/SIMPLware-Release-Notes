@@ -4,17 +4,19 @@ There's a new release that will be ready soon! These release notes are **incompl
 
 # v3.2.1 - PIN it to win it
 <div class=h1Subtitle>
-TBD
+2026.11.20
 </div>
 
 ## ✨ Shiny new stuff
-### 🔑 Sign in to Flo without a Microsoft account [#9220] [#8750]
+### 🔑 Sign in to Flo without a Microsoft account [#9220]
 Sites can now add **Flo users with no Microsoft account**!
+
+![](_media/screenshots/3.2.1/NewSignInScreen.png)
 
 - **Flo admins** can create, update, disable and reset the PIN for local users [#9222]
 - Local users sign in to Flo with a **username and PIN**
   - Local users are given a **temporary PIN** that must be changed at **first sign-in** [#9223] [#9225]
-- Sign-in details are **encrypted end to end**, so no password, PIN or token travels in the clear *(In Dev)* [#8396] [#9221] [#9225]
+- Sign-in details are **encrypted end to end**, so no password, PIN or token travels in the clear [#8396] [#9221] [#9225]
 
 ### 💾 Redis resilience [#8779]
 Site data can now be **restored** after **full data loss**!
@@ -30,21 +32,21 @@ The system **visibility layer** that feeds Flo now runs on **its own Redis datab
 ### 🚨 Problems caught before you notice *(In Dev)* [#8994]
 The team now gets **alerts** the moment a **site's servers** run into trouble, with **dashboards** and **runbooks** to fix it fast! [#9159] [#9160] [#9161] [#9162] [#9163] [#9164] [#9165] [#9166] [#9167] [#9168]
 
-### 🔄 Rotate totes in place with Flo teleport *(In Dev)* [#9112]
+### 🔄 Rotate totes in place with Flo teleport [#9112]
 Teleport a tote to **its own spot** in Flo to **rotate it in place**!
 
 ## 🪲 Bug fixes
-- Flo screens no longer stall for a moment every few minutes on busy sites *(To Do)* [#9257]
+- Flo screens no longer stall for a moment every few minutes on busy sites *(In Dev)* [#9257]
 - Marking a tunnel accessible in Flo now takes effect right away instead of timing out after about two minutes *(In Dev)* [#9297]
 - Workstation cards on the Workstations screen now show how full each workstation is, use the same red icons as the Workstation Detail screen, and open into it smoothly [#9195]
 - The Demand Detail screen now counts Unconstrained and Constrained by demand type like its other counts, and tapping the workstation name opens the Workstation Detail screen [#9195] [#9194]
 - Totes teleported to the orphanage now show the orphanage as their parent container on the Container Detail screen [#9263]
 - Inaccessible tunnels now show on the shelf and tote screens with the tunnel's name instead of the shelf's [#9288]
-- Containers on the Flo teleport bottom sheet now load every time without restarting Flo *(To Do)* [#9264]
-- Buttons on Flo bottom sheets, like the Containers screen filter buttons, are no longer hidden behind the Android navigation bar *(To Do)* [#9291]
+- Containers on the Flo teleport bottom sheet now load every time without restarting Flo *(In Dev)* [#9264]
+- Buttons on Flo bottom sheets, like the Containers screen filter buttons, are no longer hidden behind the Android navigation bar *(In Dev)* [#9291]
 - Opening a container or tote's Detail screen in Flo now double-checks it right away *(In Dev)* [#9227]
 - Totes in quarantine or missing a required tag are no longer picked for product pack and container demands *(To Do)* [#9076]
-- A Mantis is no longer reported as finishing a task it never finished, which left totes in the P&D while Flo showed them on the robot *(In Dev)* [#9299]
+- A Mantis is no longer reported as finishing a task it never finished, which left totes in the P&D while Flo showed them on the robot *(In Dev)* [#9299] [#9300]
 
 ## 💽 Firmware updates
 No firmware updates required! ✅
