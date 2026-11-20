@@ -22,15 +22,15 @@ Sites can now add **Flo users with no Microsoft account**!
 Site data can now be **restored** after **full data loss**!
 
 - The system takes **nightly snapshots** of its live data and can be **restored** from any of them [#9093] [#9094] [#9095] [#9096]
-- **Inventory state** can be rebuilt from Puls events *(In Dev)* [#9097]
-- A **disaster recovery runbook** and **restore drills** keep the team ready *(In Dev)* [#9099] [#9100] [#9101]
+- **Inventory state** can be rebuilt from Puls events [#9097]
+- A **disaster recovery runbook** and **restore drills** keep the team ready [#9099] [#9100] [#9101]
 
 ## ⏫ Level-ups
 ### ⚡ Snappier SIMPLware [#9152]
 The system **visibility layer** that feeds Flo now runs on **its own Redis database**, taking load off the **main Redis** so the **whole system** lags less!
 
-### 🚨 Problems caught before you notice *(In Dev)* [#8994]
-The team now gets **alerts** the moment a **site's servers** run into trouble, with **dashboards** and **runbooks** to fix it fast! [#9159] [#9160] [#9161] [#9162] [#9163] [#9164] [#9165] [#9166] [#9167] [#9168]
+### 🚨 Problems caught before you notice [#8994]
+The team now gets **alerts** the moment a **site's servers** run into trouble, with **dashboards** and **runbooks** to fix it fast! [#9159] [#9160] [#9161] [#9162] [#9163] [#9164] [#9165] [#9167] [#9168]
 
 ### 🔄 Rotate totes in place with Flo teleport [#9112]
 Teleport a tote to **its own spot** in Flo to **rotate it in place**!
@@ -38,7 +38,7 @@ Teleport a tote to **its own spot** in Flo to **rotate it in place**!
 ## 🪲 Bug fixes
 - Flo screens no longer stall for a moment every few minutes on busy sites [#9257]
 - Signing in to Flo with Microsoft for the first time no longer times out after clearing the cache [#9332]
-- Marking a tunnel accessible in Flo now takes effect right away instead of timing out after about two minutes *(In Dev)* [#9297] [#9341]
+- Marking a tunnel accessible in Flo now takes effect right away instead of timing out after about two minutes [#9297] [#9341]
 - After moving a Mantis to a DM code in Flo, more moves from the Robot Detail screen go through without leaving and reopening it *(In Dev)* [#9348]
 - Blocked totes and shelves in Flo show "Blocked by" again, and a manual Mantis extract asks to remove the blocking tote first *(In Dev)* [#9343] [#9347]
 - Container search in Flo now shows only the container you searched for, in number order *(In Dev)* [#9340]
@@ -50,6 +50,7 @@ Teleport a tote to **its own spot** in Flo to **rotate it in place**!
 - Buttons on Flo bottom sheets, like the Containers screen filter buttons, are no longer hidden behind the Android navigation bar [#9291]
 - Opening a container or tote's Detail screen in Flo now double-checks it right away *(In Dev)* [#9227]
 - A Mantis is no longer reported as finishing a task it never finished, which left totes in the P&D while Flo showed them on the robot [#9299] [#9300]
+- MOM now plans Mantis moves faster [#9290]
 
 ## 💽 Firmware updates
 No firmware updates required! ✅
@@ -57,6 +58,7 @@ No firmware updates required! ✅
 ## 🧪 Development improvements
 - Groundwork for support tickets from local Flo users, so they reach support with the user's name once support tickets roll out [#9226]
 - Services now fail in about 20 seconds with an honest log line when Redis is down, instead of 42 to 84 seconds [#9234]
+- AMS now logs the command set it sends to a robot *(In Dev)* [#9351]
 
 ## 🚧 Known issues
 - Flo's Extract on the Robot Detail screen accepts a shelf location instead of a tote ID, and the robot then pulls out the shelf itself [#8866]
@@ -75,13 +77,14 @@ No firmware updates required! ✅
 
 ## 🚀 Deployment notes
 - **New robot firmware?** NO
-- **New Flo APK?** TBD
+- **New Flo APK?** YES (version TBD)
 - **New backend services:** NONE
-- **Updated backend services:** AVS, CVS, IMS, LVS, RMS, RVS, SSS, SVS, TOM, USA
+- **Updated backend services:** AMS, AVS, CVS, IMS, LVS, MOM, RMS, RVS, SSS, SVS, TOM, USA
 - **Database migrations:** USA marks all existing users as Microsoft users at startup (runs automatically, safe to rerun) [#9222]
 - **Helm configuration changes:**
   - Each site needs its own login key pair and sign-in settings for USA and SSS [#9224]
   - New nightly Redis backup CronJob; the Blob Storage IP whitelist must allow the cluster [#8779] [#9093] [#9094]
   - Deploy the new redis-ui chart first, then set the UI_REDIS_* and replica settings [#9205]
   - On-site Flo access works now over HTTPS; no more need to use port-forwarding when on-site [#9158]
+  - Flo now waits for the robot on each manual Mantis and ant task; the new `ctRobotManualTask` timeout (7000 ms by default) is set in the flo and flo-local charts, so no per-site action is needed [#9348]
 - **Downtime requirements:** 2 hours full system downtime
