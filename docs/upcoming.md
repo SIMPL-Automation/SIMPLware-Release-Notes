@@ -39,16 +39,16 @@ Teleport a tote to **its own spot** in Flo to **rotate it in place**!
 - Flo screens no longer stall for a moment every few minutes on busy sites [#9257]
 - Signing in to Flo with Microsoft for the first time no longer times out after clearing the cache [#9332]
 - Marking a tunnel accessible in Flo now takes effect right away instead of timing out after about two minutes [#9297] [#9341]
-- After moving a Mantis to a DM code in Flo, more moves from the Robot Detail screen go through without leaving and reopening it *(In Dev)* [#9348]
-- Blocked totes and shelves in Flo show "Blocked by" again, and a manual Mantis extract asks to remove the blocking tote first *(In Dev)* [#9343] [#9347]
-- Container search in Flo now shows only the container you searched for, in number order *(In Dev)* [#9340]
+- After moving a Mantis to a DM code in Flo, more moves from the Robot Detail screen go through without leaving and reopening it [#9348]
+- Blocked totes and shelves in Flo show "Blocked by" again, and a manual Mantis extract asks to remove the blocking tote first [#9343] [#9347]
+- Container search in Flo now shows only the container you searched for, in number order [#9340]
 - Workstation cards on the Workstations screen now show how full each workstation is, use the same red icons as the Workstation Detail screen, and open into it smoothly [#9195]
 - The Demand Detail screen now counts Unconstrained and Constrained by demand type like its other counts, and tapping the workstation name opens the Workstation Detail screen [#9195] [#9194]
 - Totes teleported to the orphanage now show the orphanage as their parent container on the Container Detail screen [#9263]
 - Inaccessible tunnels now show on the shelf and tote screens with the tunnel's name instead of the shelf's [#9288]
 - Containers on the Flo teleport bottom sheet now load every time without restarting Flo [#9264]
 - Buttons on Flo bottom sheets, like the Containers screen filter buttons, are no longer hidden behind the Android navigation bar [#9291]
-- Opening a container or tote's Detail screen in Flo now double-checks it right away *(In Dev)* [#9227]
+- Opening a container or tote's Detail screen in Flo now double-checks it right away [#9227]
 - A Mantis is no longer reported as finishing a task it never finished, which left totes in the P&D while Flo showed them on the robot [#9299] [#9300]
 - MOM now plans Mantis moves faster [#9290]
 
@@ -77,7 +77,7 @@ No firmware updates required! ✅
 
 ## 🚀 Deployment notes
 - **New robot firmware?** NO
-- **New Flo APK?** YES (version TBD)
+- **New Flo APK?** YES (5.0.16)
 - **New backend services:** NONE
 - **Updated backend services:** AMS, AVS, CVS, IMS, LVS, MOM, RMS, RVS, SSS, SVS, TOM, USA
 - **Database migrations:** USA marks all existing users as Microsoft users at startup (runs automatically, safe to rerun) [#9222]
