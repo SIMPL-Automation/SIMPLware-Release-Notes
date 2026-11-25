@@ -418,7 +418,7 @@ Every time in Flo now shows in **12-hour format with AM/PM**!
 </div>
 
 ### 🪲 Bug fixes
-- Robots again prioritize urgent workstation demand instead of treating every demand as having no deadline *(In Dev)* [#9005] [#9006]
+- Robots again prioritize urgent workstation demand instead of treating every demand as having no deadline [#9005] [#9006]
 - Ant and Mantis workflows no longer get stuck when RES hits a missing gridlock label [#9008]
 
 ### 🚀 Deployment notes
